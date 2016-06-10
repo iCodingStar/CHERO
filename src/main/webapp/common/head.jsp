@@ -1,27 +1,44 @@
 <%--
-  User: iCodingStar
-  Time: 16/6/4 16:27
+ * <p>File: hrad.jsp</p>
+ * <p>Description:网站头部内容 </p>
+ * <p>site: www.codingstar.cn</p>
+ *
+ * @autor iCodingStar
+ * @date 2016/6/10 20:53
+ * @since 1.0.0
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-<meta name="description" content="C-HERO">
-<meta name="author" content="iCodingStar">
-<link rel="icon" href="${pageContext.request.contextPath}/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="${pageContext.request.contextPath}/libs/bootstrap/css/bootstrap.css" rel='stylesheet' type='text/css'/>
 
-<title>C-HERO</title>
-
-<!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/libs/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/component.css"/>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="${pageContext.request.contextPath}/libs/jquery/jquery.min.js"></script>
-<!-- Custom styles for this template -->
+<!-- Custom Theme files -->
+<link href="${pageContext.request.contextPath}/css/style.css" rel='stylesheet'/>
+<!--fullpage css-->
+<link href="${pageContext.request.contextPath}/css/jquery.fullpage.min.css" rel="stylesheet">
+<!--jQuery-->
+<script src="${pageContext.request.contextPath}/libs/js/jquery/jquery.min.js"></script>
+<!--jquery fullpage-->
+<script src="${pageContext.request.contextPath}/libs/js/jquery.fullpage.min.js"></script>
+<script>
+    $(function () {
+        $("#fullpage").fullpage({
+            resize: true,
+            scrollingSpeed: 1000,
+            anchors: ['page-banner', 'page-trainers', 'page-courses', 'page-training', 'page-contact'],
+            loopTop: true,
+            loopBottom: true,
+            loopHorizontal: false,
+            scrollBar: true,
+            navigation: true,
+            navigationPosition: 'right',
+            navigationTooltips: ['banner', 'trainers', 'courses', 'training', 'contact'],
+            showActiveTooltip: true,
+            slidesNavigation: true,
+            slidesNavPosition: 'top'
+        });
+    })
+</script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
