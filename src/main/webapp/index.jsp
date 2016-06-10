@@ -3,79 +3,10 @@
 <html>
 <head>
     <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="${pageContext.request.contextPath}/libs/bootstrap/css/bootstrap.css" rel='stylesheet' type='text/css'/>
-
-    <!-- Custom Theme files -->
-    <link href="${pageContext.request.contextPath}/css/style.css" rel='stylesheet'/>
-    <!--fullpage css-->
-    <link href="${pageContext.request.contextPath}/css/jquery.fullpage.min.css" rel="stylesheet">
-    <!--jQuery-->
-    <script src="${pageContext.request.contextPath}/libs/js/jquery/jquery.min.js"></script>
-    <!--jquery fullpage-->
-    <script src="${pageContext.request.contextPath}/libs/js/jquery.fullpage.min.js"></script>
-    <script>
-        $(function () {
-            $("#fullpage").fullpage({
-                resize: true,
-                scrollingSpeed: 1000,
-                anchors: ['page-banner', 'page-trainers', 'page-courses', 'page-training', 'page-contact'],
-                loopTop: true,
-                loopBottom: true,
-                loopHorizontal: false,
-                scrollBar: true,
-                navigation: true,
-                navigationPosition: 'right',
-                navigationTooltips: ['banner', 'trainers', 'courses', 'training', 'contact'],
-                showActiveTooltip: true,
-                slidesNavigation: true,
-                slidesNavPosition: 'top'
-            });
-        })
-    </script>
+    <jsp:include page="common/head.jsp"></jsp:include>
 </head>
 <body>
-
-<!----- start-header---->
-<div class="header fixed">
-    <div class="container">
-
-        <div class="logo">
-            <a href="index.jsp"><h1><span></span></h1></a>
-        </div>
-
-        <span class="menu"> </span>
-
-        <div class="top-menu">
-            <nav class="navigation">
-                <ul class="cl-effect-16">
-                    <li><a class="active" href="index.jsp">首页</a></li>
-                    <li><a class="" href="index.jsp">学院介绍</a></li>
-                    <li><a class="" href="index.jsp">师资力量</a></li>
-                    <li><a class="" href="index.jsp">体能训练</a></li>
-                    <li><a class="" href="index.jsp">预约体验</a></li>
-                    <li><a class="" href="index.jsp">运动商城</a></li>
-                    <li><a class="" href="index.jsp">会员中心</a></li>
-                    <li><a href="index.jsp">联系我们</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <!-- script for menu -->
-        <script>
-            $("span.menu").click(function () {
-                $(".top-menu").slideToggle("slow", function () {
-
-                });
-            });
-        </script>
-        <!-- script for menu -->
-
-        <div class="clearfix"></div>
-    </div>
-</div>
-
+<jsp:include page="common/top-nav.jsp"></jsp:include>
 <div id="fullpage">
     <div class="section">
         <div class="banner" id="home">
@@ -87,9 +18,6 @@
             </div>
         </div>
     </div>
-    <%--<link rel="stylesheet" type="text/css" href="css/component.css"/>--%>
-    <%--<script src="js/modernizr.custom.js"></script>--%>
-    <%--<script src="js/jquery.cbpFWSlider.js"></script>--%>
 
     <!--tainers-section-->
     <div class="section">
@@ -198,42 +126,9 @@
         </div>
     </div>
     <!--training-end-->
-
-    <!----footer--->
-    <div class="section footer">
-        <div class="container-fluid">
-            <div class="contact">
-                <div class="row top-line">
-                    <div class="col-lg-12">
-                        <hr>
-                    </div>
-                </div>
-
-                <div class="row middle-line">
-                    <span>电话：027-87771666</span>
-                </div>
-
-                <div class="row middle-line">
-                    <span>邮箱：c-hero@c-hero.cn</span>
-                </div>
-
-                <div class="row middle-line">
-                    <span>地址：湖北省武汉市洪山区邮科院体育中心/中国地质大学（武汉）北区体育馆</span>
-                </div>
-
-                <div class="row bottom-line">
-                    <div class="col-lg-12">
-                        <hr>
-                    </div>
-                </div>
-            </div>
-
-            <div class="copy">
-                <p>Copyright &copy; 2016.All Rights Reserved <a href="http://blog.codingstar.cn/" target="_blank"
-                                                                title="iCodingStar">iCodingStar</a></p>
-            </div>
-        </div>
-    </div>
+    <jsp:include page="common/footer.jsp"></jsp:include>
 </div>
+
+<jsp:include page="common/bottom.jsp"></jsp:include>
 </body>
 </html>
