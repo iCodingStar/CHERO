@@ -25,4 +25,5 @@ package cn.codingstar.chero.service;
  * @since 1.0.0
  */
 public interface AdminService {
+
 }

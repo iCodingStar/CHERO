@@ -1,0 +1,93 @@
+
+a{
+    text-decoration:none;
+}
+a:link,a:visited,a:hover,a:active{
+    color: white;
+}
+body{
+    background-color: #242424;
+    min-width: 1920px;
+}
+
+/*顶部导航*/
+/*header开始*/
+header{
+    height: 100px;
+    background-color: black;
+}
+
+header > .logo {
+    display: inline-block;
+    width: 37.5rem;
+    padding-top: 20px;
+}
+
+header > nav{
+    color: white;
+    line-height: 100px;
+    float: right;
+    margin-right: 50px;
+}
+
+header > nav > ul{
+    list-style: none;
+    margin: 0;
+    display: inline-block;
+}
+
+header > nav > ul > li{
+    display: inline;
+    font-size: 20px;
+    /*font-family: '';*/
+    padding: 7px;
+    margin: 8px;
+}
+
+.active{
+    background-color: #e33641;
+    /*border: 1px solid white;*/
+    border-radius: 1px;
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, .5);
+}
+
+/*header结束*/
+
+/*内容开始*/
+.content>img.back{
+    height: 812px;
+    width: 1920px;
+    border: 0;
+}
+
+.content>.college{
+    text-align: center;
+}
+.content>.college>#college{
+    vertical-align: middle;
+    padding: 50px;
+    width: 675px;
+}
+.content>.word{
+    text-align: center;
+}
+.content>.word>#word{
+    width: 75%;
+    margin-bottom: 200px;
+}
+
+/*内容结束*/
+
+/*footer开始
+footer {height:40px;}*/
+footer span{
+    height: 1px;
+    border-top: 5px solid #e33641; 
+    display: block;
+}
+footer>p{
+    text-align: center;
+    color: white;
+    padding: 16px;
+}
+/*footer结束*/

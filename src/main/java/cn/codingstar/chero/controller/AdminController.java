@@ -17,6 +17,7 @@ package cn.codingstar.chero.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -29,11 +30,16 @@ import org.springframework.web.servlet.ModelAndView;
  * @since 1.0.0
  */
 @Controller
-@RequestMapping("/Admin")
+@RequestMapping(value = {"/Admin"},method = {RequestMethod.GET})
 public class AdminController {
 
-    @RequestMapping("/AdminHome")
-    private ModelAndView adminHome(){
-        return new ModelAndView("admin/home");
+    /***
+     * 后台管理主页
+     *
+     * @return
+     */
+    @RequestMapping("/index")
+    private ModelAndView adminIndex(){
+        return new ModelAndView("admin/index");
     }
 }

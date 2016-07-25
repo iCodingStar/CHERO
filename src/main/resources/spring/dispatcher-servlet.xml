@@ -16,11 +16,16 @@
 
     <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
 
+    <mvc:interceptors>
+        <!--配置登陆认证拦截器-->
+        <bean class="cn.codingstar.chero.common.authorization.AuthorizationInterceptor"/>
+    </mvc:interceptors>
+
     <!--配置视图解析器-->
     <mvc:annotation-driven/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
-            <value>/WEB-INF/jsp/</value>
+            <value>/WEB-INF/jsp/web/</value>
         </property>
         <property name="suffix">
             <value>.jsp</value>
@@ -37,7 +42,7 @@
         <property name="converters">
             <!--<list>-->
             <!--日期类型转换-->
-            <bean class="cn.codingstar.chero.utils.StringToDateConvertor"/>
+            <bean class="cn.codingstar.chero.common.utils.StringToDateConvertor"/>
             <!--</list>-->
         </property>
     </bean>
