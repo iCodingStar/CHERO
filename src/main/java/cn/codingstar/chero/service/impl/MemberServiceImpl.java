@@ -60,7 +60,7 @@ public class MemberServiceImpl implements MemberService {
         ValidationUtils.text(member.getPassword());
 
         //检查用户名是否已经存在
-        ValidationUtils.checkUsername(checkUsername(member.getMemberName()));
+        ValidationUtils.checkUsername(checkMemberName(member.getMemberName()));
 
         //构造Member
         Member originMember = new Member();
@@ -162,7 +162,7 @@ public class MemberServiceImpl implements MemberService {
      * @return
      */
     @Override
-    public boolean checkUsername(String memberName) {
+    public boolean checkMemberName(String memberName) {
         return ObjectUtils.isEmpty(memberCustomMapper.selectByMemberName(memberName));
     }
 

@@ -15,9 +15,17 @@
  */
 package cn.codingstar.chero.controller;
 
+import cn.codingstar.chero.common.bean.BusinessMessage;
+import cn.codingstar.chero.common.bean.MessageType;
+import cn.codingstar.chero.common.bean.Result;
+import cn.codingstar.chero.common.web.AbstractWebController;
+import cn.codingstar.chero.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -31,7 +39,11 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping(value = {"/MemberCenter"})
-public class MemberCenterController {
+public class MemberCenterController extends AbstractWebController {
+
+    @Autowired
+    private MemberService memberService;
+
     /***
      * 会员中心首页
      *
@@ -42,5 +54,26 @@ public class MemberCenterController {
         return new ModelAndView("member/index");
     }
 
-
+    /***
+     * 检查用户名是否已存在
+     *
+     * @param memberName
+     * @return
+     */
+    @RequestMapping(value = {"/checkMemberName"}, method = {RequestMethod.GET})
+    private
+    @ResponseBody
+    void checkMemberName(@RequestParam("memberName") String memberName) {
+        BusinessMessage message = new BusinessMessage();
+        if (memberService.checkMemberName(memberName)) {
+            message.setCode(MessageType.MEMBER_NAME_NOT_EXIST.getCode());
+            message.setMessage(MessageType.MEMBER_NAME_NOT_EXIST.getMessage());
+        } else {
+            message.setCode(MessageType.MEMBER_NAME_ALREADY_EXIST.getCode());
+            message.setMessage(MessageType.MEMBER_NAME_ALREADY_EXIST.getMessage());
+        }
+        Result<Boolean> result = new Result<Boolean>(message);
+        result.setData(memberService.checkMemberName(memberName));
+        renderJson(result);
+    }
 }

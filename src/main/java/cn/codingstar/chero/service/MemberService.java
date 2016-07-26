@@ -65,10 +65,10 @@ public interface MemberService {
     /***
      * 检查用户名是否存在
      *
-     * @param username
+     * @param memberName
      * @return
      */
-    boolean checkUsername(String memberName);
+    boolean checkMemberName(String memberName);
 
     /***
      * 检查token
