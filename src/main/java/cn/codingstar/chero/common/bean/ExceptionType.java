@@ -24,12 +24,12 @@ package cn.codingstar.chero.common.bean;
  * @since 1.0.0
  */
 public enum ExceptionType {
-
-    AUTHORIZATION_ERROR(401, "请先登录"),
-    DATA_NOT_FOUND(404, "数据未找到"),
-    PARAMETER_ILLEGAL(403, "参数无效"),
-    USER_NOT_FOUND(602, "用户不存在"),
-    USERNAME_PASSWORD_ERROR(601, "用户名或密码错误");
+    MEMBER_NAME_NOT_EXIST(20001, "用户名不存在"),
+    MEMBER_NOT_FOUND(20001, "找不到用户"),
+    MEMBER_REGISTER_FAILED(20002, "用户注册失败"),
+    MEMBER_NAME_PASSWORD_ERROR(20003,"用户名密码错误"),
+    PARAMETER_ILLEGAL(20004,"参数不合法"),
+    AUTHORIZATION_ERROR(20005,"授权失败");
 
     private int code;
 

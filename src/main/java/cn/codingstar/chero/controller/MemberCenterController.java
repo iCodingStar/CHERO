@@ -19,6 +19,8 @@ import cn.codingstar.chero.common.bean.BusinessMessage;
 import cn.codingstar.chero.common.bean.MessageType;
 import cn.codingstar.chero.common.bean.Result;
 import cn.codingstar.chero.common.web.AbstractWebController;
+import cn.codingstar.chero.model.dto.MemberDTO;
+import cn.codingstar.chero.model.persistence.Member;
 import cn.codingstar.chero.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,7 +52,7 @@ public class MemberCenterController extends AbstractWebController {
      * @return
      */
     @RequestMapping(value = {"/Index"}, method = {RequestMethod.GET})
-    private ModelAndView memberCenterIndex() {
+    public ModelAndView memberCenterIndex() {
         return new ModelAndView("member/index");
     }
 
@@ -61,7 +63,7 @@ public class MemberCenterController extends AbstractWebController {
      * @return
      */
     @RequestMapping(value = {"/checkMemberName"}, method = {RequestMethod.GET})
-    private
+    public
     @ResponseBody
     void checkMemberName(@RequestParam("memberName") String memberName) {
         BusinessMessage message = new BusinessMessage();
@@ -75,5 +77,53 @@ public class MemberCenterController extends AbstractWebController {
         Result<Boolean> result = new Result<Boolean>(message);
         result.setData(memberService.checkMemberName(memberName));
         renderJson(result);
+    }
+
+//    @RequestMapping(value = "/Login", method = RequestMethod.GET)
+//    public String login() {
+//        return "/member/login";
+//    }
+
+    /***
+     * 用户登录
+     *
+     * @param memberName
+     * @param password
+     * @return
+     */
+    @RequestMapping(value = {"/login"}, method = RequestMethod.POST)
+    public ModelAndView login(String memberName, String password) {
+        ModelAndView mav = new ModelAndView();
+        Result result = memberService.login(memberName, password);
+        if (result.success()) {
+            mav.setViewName("/member/index");
+            mav.addObject("member", result.getData());
+            mav.addObject("message", result.getMessage());
+        } else {
+            mav.setViewName("/member/login");
+            mav.addObject("message", result.getMessage());
+        }
+        return mav;
+    }
+
+
+    /***
+     * @return
+     */
+//    @RequestMapping(value = {"/Register"}, method = RequestMethod.GET)
+//    public String register() {
+//        return "member/register";
+//    }
+
+    /***
+     * 用户注册
+     *
+     * @param member
+     * @return
+     */
+    @RequestMapping(value = {"/Register"}, method = RequestMethod.GET)
+    public String register(Member member) {
+        Result<MemberDTO> result = memberService.register(member);
+        return "member/register-success";
     }
 }

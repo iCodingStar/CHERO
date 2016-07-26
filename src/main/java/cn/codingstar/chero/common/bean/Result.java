@@ -29,57 +29,29 @@ import lombok.Data;
  */
 @Data
 public class Result<T> {
-    private int code;
 
-    private String message;
+    private MessageType message;
 
     private Object data;
 
     public Result() {
-        this.code = 200;
-        this.message = "请求成功";
+        this.message = MessageType.UNKNOWN_RESULT;
     }
 
     public Result(Object data) {
-        this.code = 200;
-        this.message = "请求成功";
+        this.message = MessageType.UNKNOWN_RESULT;
         this.data = data;
     }
 
-    public Result(Exception exception) {
-        if (exception instanceof BusinessException) {
-            BusinessException businessException = (BusinessException) exception;
-            this.code = businessException.getCode();
-            this.message = businessException.getMessage();
-        } else {
-            this.code = 500;
-            this.message = "系统发生错误，请联系管理员";
-        }
-    }
-
-    public Result(BusinessMessage message) {
+    public Result(MessageType message) {
         if (message != null) {
-            if (message.getCode() != null){
-                this.code = message.getCode();
-            }else {
-                this.code = 100;
-            }
-            if (message.getMessage()!= null){
-                this.message = message.getMessage();
-            }else {
-                this.message = "未知结果";
-            }
+            this.message = message;
         } else {
-            this.code = 100;
-            this.message = "未知结果";
+            this.message = MessageType.UNKNOWN_RESULT;
         }
     }
 
     public boolean success() {
-        return this.code == 200;
-    }
-
-    public boolean authorizationError() {
-        return this.code == 401;
+        return (this.message.getCode() > 10000 && this.message.getCode() % 2 == 1);
     }
 }

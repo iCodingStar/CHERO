@@ -15,6 +15,7 @@
  */
 package cn.codingstar.chero.service;
 
+import cn.codingstar.chero.common.bean.Result;
 import cn.codingstar.chero.model.dto.MemberDTO;
 import cn.codingstar.chero.model.persistence.Member;
 
@@ -34,16 +35,16 @@ public interface MemberService {
      * @param member
      * @return
      */
-    Member register(Member member);
+    Result<MemberDTO> register(Member member);
 
     /***
-     * 用户登录
+     * 用户登录,返回用户信息
      *
      * @param memberName
      * @param password
      * @return
      */
-    Member login(String memberName, String password);
+    Result<MemberDTO> login(String memberName, String password);
 
     /***
      * 使用token登陆

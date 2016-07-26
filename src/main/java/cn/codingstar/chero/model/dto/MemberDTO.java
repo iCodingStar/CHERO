@@ -15,6 +15,7 @@
  */
 package cn.codingstar.chero.model.dto;
 
+import cn.codingstar.chero.model.persistence.Member;
 import lombok.Data;
 
 import java.util.Date;
@@ -30,13 +31,10 @@ import java.util.Date;
  */
 @Data
 public class MemberDTO {
-    protected String memberId;
 
     protected String memberNickname;
 
     protected String memberName;
-
-    protected Boolean enable;
 
     protected String memberImage;
 
@@ -58,5 +56,21 @@ public class MemberDTO {
 
     protected String memberNote;
 
-    protected String token;
+    public MemberDTO() {
+    }
+
+    public MemberDTO(Member member) {
+        this.memberNickname = member.getMemberNickname();
+        this.memberName = member.getMemberName();
+        this.memberImage = member.getMemberImage();
+        this.memberSex = member.getMemberSex();
+        this.memberBirthday = member.getMemberBirthday();
+        this.memberHobby = member.getMemberHobby();
+        this.memberTelephone = member.getMemberTelephone();
+        this.memberHomePhone = member.getMemberHomePhone();
+        this.memberQq = member.getMemberQq();
+        this.memberWeixin = member.getMemberWeixin();
+        this.memberAddress = member.getMemberAddress();
+        this.memberNote = member.getMemberNote();
+    }
 }

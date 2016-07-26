@@ -16,6 +16,8 @@
 package cn.codingstar.chero.service.impl;
 
 import cn.codingstar.chero.common.bean.ExceptionType;
+import cn.codingstar.chero.common.bean.MessageType;
+import cn.codingstar.chero.common.bean.Result;
 import cn.codingstar.chero.common.exception.BusinessException;
 import cn.codingstar.chero.common.utils.ObjectUtils;
 import cn.codingstar.chero.common.utils.ValidationUtils;
@@ -52,7 +54,7 @@ public class MemberServiceImpl implements MemberService {
      * @return
      */
     @Override
-    public Member register(Member member) {
+    public Result<MemberDTO> register(Member member) {
         //检查用户名密码是否有效
         ValidationUtils.required(member.getMemberName());
         ValidationUtils.required(member.getPassword());
@@ -61,6 +63,9 @@ public class MemberServiceImpl implements MemberService {
 
         //检查用户名是否已经存在
         ValidationUtils.checkUsername(checkMemberName(member.getMemberName()));
+
+        //返回结果对象
+        Result<MemberDTO> result = new Result<>();
 
         //构造Member
         Member originMember = new Member();
@@ -82,9 +87,14 @@ public class MemberServiceImpl implements MemberService {
         originMember.setEnable(true);
 
         //注册用户
-        memberMapper.insertSelective(originMember);
+        try {
+            memberMapper.insertSelective(originMember);
+            result.setMessage(MessageType.MEMBER_REGISTER_SUCCEED);
+        } catch (Exception e) {
+            throw new BusinessException(ExceptionType.MEMBER_REGISTER_FAILED);
+        }
 
-        return originMember;
+        return result;
     }
 
     /***
@@ -95,28 +105,39 @@ public class MemberServiceImpl implements MemberService {
      * @return
      */
     @Override
-    public Member login(String memberName, String password) {
+    public Result<MemberDTO> login(String memberName, String password) {
         //检查用户名和密码是否有效
         ValidationUtils.required(memberName);
         ValidationUtils.required(password);
         ValidationUtils.text(memberName);
         ValidationUtils.text(password);
 
-        Member originMember = memberCustomMapper.selectByMemberName(memberName);
+        Result<MemberDTO> result = new Result<>();
+
+        Member originMember = null;
+
+        originMember = memberCustomMapper.selectByMemberName(memberName);
+
         //检查用户是否存在
         if (ObjectUtils.isEmpty(originMember)) {
-            throw new BusinessException(ExceptionType.USER_NOT_FOUND);
+            throw new BusinessException(ExceptionType.MEMBER_NAME_NOT_EXIST);
         }
         //检查密码是否正确
         if (!originMember.checkPassword(password)) {
-            throw new BusinessException(ExceptionType.USERNAME_PASSWORD_ERROR);
+            throw new BusinessException(ExceptionType.MEMBER_NAME_PASSWORD_ERROR);
         }
+
         //生成token
         originMember.generateToken();
+
         //更新数据(存储token)
         memberMapper.updateByPrimaryKeySelective(originMember);
+        //返回用户基本信息
+        MemberDTO memberDTO = new MemberDTO(originMember);
 
-        return originMember;
+        result.setData(memberDTO);
+
+        return result;
     }
 
     /***
@@ -189,7 +210,7 @@ public class MemberServiceImpl implements MemberService {
     public MemberDTO getLoginMember(Integer memberId) {
         Member originMember = memberMapper.selectByPrimaryKey(memberId);
         if (ObjectUtils.isEmpty(originMember)) {
-            throw new BusinessException(ExceptionType.USER_NOT_FOUND);
+            throw new BusinessException(ExceptionType.MEMBER_NOT_FOUND);
         }
         MemberDTO memberDTO = new MemberDTO();
         //设置想要传输的数据信息
