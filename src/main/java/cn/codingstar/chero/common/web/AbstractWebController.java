@@ -41,6 +41,8 @@ public abstract class AbstractWebController extends AbstractController {
 
     protected static final String NICKNAME_ATTRIBUTE_NAME = "nickname";
 
+    protected static final String MEMBER_ATTRIBUTE = "member";
+
 
     /**
      * 绑定response对象
@@ -58,6 +60,18 @@ public abstract class AbstractWebController extends AbstractController {
      * @param loginMember
      */
     protected void loginSuccess(MemberDTO loginMember) {
+        setSessionAttribute(MEMBER_ATTRIBUTE, loginMember);
+        setSessionAttribute(MEMBER_ATTRIBUTE_NAME, loginMember.getMemberName());
+        setSessionAttribute(NICKNAME_ATTRIBUTE_NAME, loginMember.getMemberNickname());
+    }
+
+    /**
+     * 成功登录后处理session
+     *
+     * @param loginMember
+     */
+    protected void loginError(MemberDTO loginMember) {
+        setSessionAttribute(MEMBER_ATTRIBUTE, loginMember);
         setSessionAttribute(MEMBER_ATTRIBUTE_NAME, loginMember.getMemberName());
         setSessionAttribute(NICKNAME_ATTRIBUTE_NAME, loginMember.getMemberNickname());
     }
@@ -66,6 +80,7 @@ public abstract class AbstractWebController extends AbstractController {
      * 成功注销后处理session
      */
     protected void logoutSuccess() {
+        setSessionAttribute(MEMBER_ATTRIBUTE, null);
         setSessionAttribute(MEMBER_ATTRIBUTE_NAME, null);
         setSessionAttribute(NICKNAME_ATTRIBUTE_NAME, null);
     }

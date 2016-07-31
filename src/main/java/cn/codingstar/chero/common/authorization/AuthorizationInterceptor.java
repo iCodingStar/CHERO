@@ -22,9 +22,11 @@ import cn.codingstar.chero.common.utils.ObjectUtils;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 /**
  * @author ShiXing
@@ -43,21 +45,23 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
         CheckLogin checkLogin = handlerMethod.getMethodAnnotation(CheckLogin.class);
         //如果需要登陆，则检查用户是否登陆
         if (checkLogin != null) {
-            checkLogin(request);
+            checkLogin(request, response);
         }
         //如果需要登陆，则检查用户是否登陆
         checkLogin = handlerMethod.getBeanType().getDeclaredAnnotation(CheckLogin.class);
         if (checkLogin != null) {
-            checkLogin(request);
+            checkLogin(request, response);
         }
         return super.preHandle(request, response, handler);
     }
 
-    private void checkLogin(HttpServletRequest request) {
+    private void checkLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         //如果用户未登陆，则抛出异常
         if (ObjectUtils.isEmpty(session.getAttribute("memberName"))) {
-            throw new BusinessException(ExceptionType.AUTHORIZATION_ERROR);
+            //跳转到个人中心界面
+            request.getRequestDispatcher("/MemberCenter/Login/Index").forward(request,response);
+            //throw new BusinessException(ExceptionType.AUTHORIZATION_ERROR);
         }
     }
 

@@ -15,6 +15,7 @@
  */
 package cn.codingstar.chero.controller;
 
+import cn.codingstar.chero.common.authorization.CheckLogin;
 import cn.codingstar.chero.common.bean.BusinessMessage;
 import cn.codingstar.chero.common.bean.MessageType;
 import cn.codingstar.chero.common.bean.Result;
@@ -29,6 +30,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 /**
  * <p>Class: MemberController</p>
@@ -52,8 +57,11 @@ public class MemberCenterController extends AbstractWebController {
      * @return
      */
     @RequestMapping(value = {"/Index"}, method = {RequestMethod.GET})
+    @CheckLogin
     public ModelAndView memberCenterIndex() {
-        return new ModelAndView("member/index");
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/index");
+        return mav;
     }
 
     /***
@@ -62,7 +70,7 @@ public class MemberCenterController extends AbstractWebController {
      * @param memberName
      * @return
      */
-    @RequestMapping(value = {"/checkMemberName"}, method = {RequestMethod.GET})
+    @RequestMapping(value = {"/CheckMemberName"}, method = {RequestMethod.GET})
     public
     @ResponseBody
     void checkMemberName(@RequestParam("memberName") String memberName) {
@@ -79,41 +87,44 @@ public class MemberCenterController extends AbstractWebController {
         renderJson(result);
     }
 
-//    @RequestMapping(value = "/Login", method = RequestMethod.GET)
-//    public String login() {
-//        return "/member/login";
-//    }
+    /***
+     * 用户前往登录
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Login/Index"}, method = RequestMethod.GET)
+    public String toLogin() {
+        return "/member/login";
+    }
 
     /***
-     * 用户登录
+     * 用户登录验证
      *
      * @param memberName
      * @param password
      * @return
      */
-    @RequestMapping(value = {"/login"}, method = RequestMethod.POST)
-    public ModelAndView login(String memberName, String password) {
+    @RequestMapping(value = {"/Login/Check"}, method = RequestMethod.POST)
+    public void checkLogin(String memberName, String password) {
         ModelAndView mav = new ModelAndView();
-        Result result = memberService.login(memberName, password);
-        if (result.success()) {
-            mav.setViewName("/member/index");
-            mav.addObject("member", result.getData());
-            mav.addObject("message", result.getMessage());
-        } else {
-            mav.setViewName("/member/login");
-            mav.addObject("message", result.getMessage());
+        boolean loginSuccess = memberService.login(memberName, password);
+        if (loginSuccess) {//如果登陆成功
+            loginSuccess(memberService.getLoginMember(memberName));
+            renderJson(true);
+        } else {//登陆失败
+            renderJson(false);
         }
-        return mav;
     }
 
-
     /***
+     * 用户前往注册
+     *
      * @return
      */
-//    @RequestMapping(value = {"/Register"}, method = RequestMethod.GET)
-//    public String register() {
-//        return "member/register";
-//    }
+    @RequestMapping(value = {"/Register/Index"}, method = RequestMethod.GET)
+    public String toRegister() {
+        return "/member/register";
+    }
 
     /***
      * 用户注册
@@ -121,9 +132,31 @@ public class MemberCenterController extends AbstractWebController {
      * @param member
      * @return
      */
-    @RequestMapping(value = {"/Register"}, method = RequestMethod.GET)
-    public String register(Member member) {
-        Result<MemberDTO> result = memberService.register(member);
-        return "member/register-success";
+    @RequestMapping(value = {"/Register/Check"}, method = RequestMethod.POST)
+    public void checkRegister(Member member) {
+        //用户注册
+        boolean registerSuccess = memberService.register(member);
+        if (registerSuccess){
+            //用户登录
+            MemberDTO memberDTO = memberService.getLoginMember(member.getMemberName());
+            loginSuccess(memberDTO);
+            renderJson(true);
+        }else {
+            setRequestAttribute("error","注册失败！");
+            renderJson(false);
+        }
+    }
+
+    /**
+     * @author iCodingStar
+     * @params []
+     * @return java.lang.String
+     * @description 注册成功
+     * @since 1.0 2016/7/31 1:04
+     */
+    @RequestMapping(value = {"/Register/Success"},method = RequestMethod.GET)
+    @CheckLogin
+    public String registerSuccess(){
+        return "/member/register-success";
     }
 }

@@ -27,4 +27,6 @@ public interface MemberMapper {
     int updateByPrimaryKeySelective(Member record);
 
     int updateByPrimaryKey(Member record);
+
+    Member selectByMemberName(String memberName);
 }

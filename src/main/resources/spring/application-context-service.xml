@@ -12,6 +12,6 @@
 
     <!-- Annotation Config -->
     <context:annotation-config/>
-    <context:component-scan base-package="cn.codingstar.chero.service"/>
+    <context:component-scan base-package="cn.codingstar.chero.service,cn.codingstar.chero.component"/>
 </beans>
 

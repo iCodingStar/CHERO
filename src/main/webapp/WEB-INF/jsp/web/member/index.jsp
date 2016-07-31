@@ -24,7 +24,7 @@
     </nav>
 </header>
 <!--close-top-Header-menu-->
-    欢迎来到个人中心
+    ${member.memberName},欢迎来到个人中心!
 <jsp:include page="../../common/footer.jsp"/>
 </body>
 </html>

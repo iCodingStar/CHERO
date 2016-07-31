@@ -13,11 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.codingstar.chero.model.persistence;
-
-import lombok.Data;
-
-import java.util.Date;
+package cn.codingstar.chero.service;
 
 /**
  * <p>Class: </p>
@@ -25,15 +21,11 @@ import java.util.Date;
  * <p>site: www.codingstar.cn</p>
  *
  * @autor iCodingStar
- * @date 2016/6/10 20:18
+ * @date 2016/7/30 18:26
  * @since 1.0.0
  */
+public interface UniqueKeyService {
 
-@Data
-public class BaseModel {
-    protected Integer id;
+    Integer insertForKey();
 
-    protected Date createTime;
-
-    protected Date updateTime;
 }

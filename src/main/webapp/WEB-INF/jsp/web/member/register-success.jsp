@@ -9,6 +9,10 @@
 <body>
 <!--top-Header-menu-->
 <header id="header">
+    <%
+        String value = "3;" + pageContext.getServletContext().getContextPath() + "/MemberCenter/Index";
+        response.setHeader("refresh",value);
+    %>
     <!--<div class="logo">-->
     <img src="${pageContext.request.contextPath}/img/logo.png" alt="logo" class="logo">
     <!--</div>-->
@@ -27,10 +31,9 @@
 </header>
 <!--close-top-Header-menu-->
 <div class="user">
-    <div style="margin-left: 60px;"><img src="../../../img/user/success.png"></div>
+    <div style="margin-left: 60px;"><img src="${pageContext.request.contextPath}/img/user/success.png"></div>
     <a href="login.jsp"
-       style="display:block;background:url(../../../img/user/p5.png);width:462px;height:51px;margin-left: -45px;margin-top: 50px;"></a>
-
+       style="display:block;background:url(${pageContext.request.contextPath}/img/user/p5.png);width:462px;height:51px;margin-left: -45px;margin-top: 50px;"></a>
 </div>
 <jsp:include page="../../common/footer.jsp"/>
 </body>

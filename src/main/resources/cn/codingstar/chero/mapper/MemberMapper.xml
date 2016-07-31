@@ -430,4 +430,10 @@
       member_note = #{memberNote,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectByMemberName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from member
+    where member_name = #{memberName,jdbcType=VARCHAR}
+  </select>
 </mapper>

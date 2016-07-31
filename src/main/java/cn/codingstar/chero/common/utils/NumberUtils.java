@@ -13,11 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.codingstar.chero.model.persistence;
-
-import lombok.Data;
-
-import java.util.Date;
+package cn.codingstar.chero.common.utils;
 
 /**
  * <p>Class: </p>
@@ -25,15 +21,22 @@ import java.util.Date;
  * <p>site: www.codingstar.cn</p>
  *
  * @autor iCodingStar
- * @date 2016/6/10 20:18
+ * @date 2016/7/31 0:03
  * @since 1.0.0
  */
+public interface NumberUtils {
 
-@Data
-public class BaseModel {
-    protected Integer id;
+    static String format(Integer number, Integer length) {
+        String value = String.valueOf(number);
+        StringBuffer formatNumber = new StringBuffer();
+        if (length - value.length() <= 0) {
+            return value;
+        }
+        for (int i = 0; i < length - value.length(); i++) {
+            formatNumber.append("0");
+        }
+        formatNumber.append(value);
+        return formatNumber.toString();
+    }
 
-    protected Date createTime;
-
-    protected Date updateTime;
 }

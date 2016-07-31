@@ -16,6 +16,7 @@
 package cn.codingstar.chero.service;
 
 import cn.codingstar.chero.common.bean.Result;
+import cn.codingstar.chero.model.dto.MemberDO;
 import cn.codingstar.chero.model.dto.MemberDTO;
 import cn.codingstar.chero.model.persistence.Member;
 
@@ -35,7 +36,7 @@ public interface MemberService {
      * @param member
      * @return
      */
-    Result<MemberDTO> register(Member member);
+    boolean register(Member member);
 
     /***
      * 用户登录,返回用户信息
@@ -44,7 +45,8 @@ public interface MemberService {
      * @param password
      * @return
      */
-    Result<MemberDTO> login(String memberName, String password);
+    boolean login(String memberName, String password);
+
 
     /***
      * 使用token登陆
@@ -86,4 +88,13 @@ public interface MemberService {
      * @return
      */
     MemberDTO getLoginMember(Integer memberId);
+
+    /**
+     * @author iCodingStar
+     * @params
+     * @return 
+     * @description 
+     * @since 1.0 2016/7/28 17:06
+     */
+    MemberDTO getLoginMember(String memberName);
 }

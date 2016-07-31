@@ -1,6 +1,7 @@
 package cn.codingstar.chero.model.persistence;
 
 import cn.codingstar.chero.common.authorization.AuthorizationHelper;
+import cn.codingstar.chero.model.dto.MemberDTO;
 import lombok.Data;
 
 import java.util.Date;
@@ -42,6 +43,8 @@ public class Member extends BaseModel {
 
     protected String token;
 
+    protected String memberEmail;//用户邮箱
+
     /***
      * 密码加密
      */
@@ -65,5 +68,4 @@ public class Member extends BaseModel {
     public void generateToken() {
         this.token = AuthorizationHelper.generateToken(this.memberName, this.password);
     }
-
 }

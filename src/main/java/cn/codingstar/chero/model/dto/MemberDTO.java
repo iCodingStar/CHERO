@@ -32,6 +32,8 @@ import java.util.Date;
 @Data
 public class MemberDTO {
 
+    protected Integer id;
+
     protected String memberNickname;
 
     protected String memberName;
@@ -56,10 +58,13 @@ public class MemberDTO {
 
     protected String memberNote;
 
+    protected String memberEmail;//用户邮箱
+
     public MemberDTO() {
     }
 
     public MemberDTO(Member member) {
+        this.id = member.getId();
         this.memberNickname = member.getMemberNickname();
         this.memberName = member.getMemberName();
         this.memberImage = member.getMemberImage();
@@ -72,5 +77,6 @@ public class MemberDTO {
         this.memberWeixin = member.getMemberWeixin();
         this.memberAddress = member.getMemberAddress();
         this.memberNote = member.getMemberNote();
+        this.memberEmail = member.getMemberEmail();
     }
 }

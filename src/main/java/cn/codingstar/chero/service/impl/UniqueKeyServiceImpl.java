@@ -13,11 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.codingstar.chero.model.persistence;
+package cn.codingstar.chero.service.impl;
 
-import lombok.Data;
-
-import java.util.Date;
+import cn.codingstar.chero.mapper.UniqueKeyMapper;
+import cn.codingstar.chero.model.persistence.UniqueKey;
+import cn.codingstar.chero.service.UniqueKeyService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * <p>Class: </p>
@@ -25,15 +27,23 @@ import java.util.Date;
  * <p>site: www.codingstar.cn</p>
  *
  * @autor iCodingStar
- * @date 2016/6/10 20:18
+ * @date 2016/7/30 18:26
  * @since 1.0.0
  */
+@Service
+public class UniqueKeyServiceImpl implements UniqueKeyService {
 
-@Data
-public class BaseModel {
-    protected Integer id;
+    @Autowired
+    private UniqueKeyMapper uniqueKeyMapper;
 
-    protected Date createTime;
-
-    protected Date updateTime;
+    @Override
+    public Integer insertForKey() {
+        UniqueKey uniqueKey = new UniqueKey();
+        try{
+            uniqueKeyMapper.insert(uniqueKey);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return uniqueKey.getId();
+    }
 }
