@@ -122,40 +122,34 @@
             } else if (memberName.match(/^[A-Za-z0-9_]+$/)) {
                 var isMemberNameExist = false;
                 var requestError = false;
-                var url = "/MemberCenter/checkMemberName";
+                var url = "/MemberCenter/CheckMemberName";
                 var dataType = "json";
                 var data = {memberName: memberName};
                 var type = "GET";
 
                 function checkMemberNameSuccess(result) {
-                    isMemberNameExist = !result.data;
+                    if (!result.data) {
+                        memberNameElement.tips({
+                            msg: "用户名已存在",
+                            side: 2,
+                            time: 2
+                        });
+                        console.log(memberNameElement);
+                        memberNameElement.focus();
+                    }
                 }
 
                 function checkMemberNameError(result) {
-                    requestError = true;
-                }
-
-                getData(url, dataType, data, type, checkMemberNameSuccess, checkMemberNameError);
-
-                if (requestError) {
                     memberNameElement.tips({
                         msg: "用户名校验失败",
                         side: 2,
                         time: 2
                     });
                     memberNameElement.focus();
-                    return false;
                 }
 
-                if (isMemberNameExist) {
-                    memberNameElement.tips({
-                        msg: "用户名已存在",
-                        side: 2,
-                        time: 2
-                    });
-                    memberNameElement.focus();
-                    return false;
-                }
+                getData(url, dataType, data, type, checkMemberNameSuccess, checkMemberNameError);
+
                 return true;
             } else {
                 memberNameElement.tips({
