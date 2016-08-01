@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS c_hero.course;
 DROP TABLE IF EXISTS c_hero.course_stage;
 DROP TABLE IF EXISTS `c_hero`.`order`;
 DROP TABLE IF EXISTS c_hero.member_schedule;
+DROP TABLE IF EXISTS c_hero.unique_key;
 
 /**
  * @author iCodingStar
@@ -22,7 +23,7 @@ CREATE TABLE `c_hero`.`admin`(
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '主键',
   `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `admin_id` VARCHAR(11) NOT NULL UNIQUE COMMENT '管理员账号',
+  `admin_id` VARCHAR(12) NOT NULL UNIQUE COMMENT '管理员账号',
   `admin_name` VARCHAR(45) NOT NULL COMMENT '姓名',
   `admin_nickname` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '昵称',
   `password` VARCHAR(45) NOT NULL COMMENT '密码',
@@ -41,7 +42,7 @@ CREATE TABLE `c_hero`.`member`(
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '主键',
   `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `member_id` VARCHAR(11) NOT NULL UNIQUE COMMENT '会员账号',
+  `member_id` VARCHAR(12) NOT NULL UNIQUE COMMENT '会员账号',
   `member_nickname` VARCHAR(45) NOT NULL DEFAULT '小鲜肉' COMMENT '昵称',
   `member_name` VARCHAR(45) NOT NULL COMMENT '姓名',
   `password` VARCHAR(45) NOT NULL COMMENT '密码',
@@ -69,7 +70,7 @@ CREATE TABLE `c_hero`.`trainer`(
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '主键',
   `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `trainer_id` VARCHAR(11) NOT NULL UNIQUE COMMENT '教练账号',
+  `trainer_id` VARCHAR(12) NOT NULL UNIQUE COMMENT '教练账号',
   `trainer_nickname` VARCHAR(45) NOT NULL DEFAULT '老鸟' COMMENT '昵称',
   `trainer_name` VARCHAR(45) NOT NULL COMMENT '姓名',
   `trainer_image` VARCHAR(128) DEFAULT 'trainer.jpg' COMMENT '教练照片',
@@ -95,7 +96,7 @@ CREATE TABLE `c_hero`.`course_category`(
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '主键',
   `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `course_category_id` VARCHAR(11) NOT NULL UNIQUE COMMENT '课程分类ID',
+  `course_category_id` VARCHAR(12) NOT NULL UNIQUE COMMENT '课程分类ID',
   `course_category_name` VARCHAR(8) NOT NULL UNIQUE COMMENT '课程分类名称',
   `course_category_description` VARCHAR(128) NOT NULL UNIQUE COMMENT '课程类别描述',
   `course_category_image`  VARCHAR(128) DEFAULT 'course_category.jpg' COMMENT '课程类别照片',
@@ -112,10 +113,10 @@ CREATE TABLE `c_hero`.`course`(
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '主键',
   `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `course_id` VARCHAR(11) NOT NULL UNIQUE COMMENT '课程ID',
+  `course_id` VARCHAR(12) NOT NULL UNIQUE COMMENT '课程ID',
   `course_name` VARCHAR(8) NOT NULL UNIQUE COMMENT '课程名称',
   `course_image` VARCHAR(128) DEFAULT 'course.jpg' COMMENT '课程照片',
-  `course_category_id` VARCHAR(11) NOT NULL UNIQUE COMMENT '课程分类ID',
+  `course_category_id` VARCHAR(12) NOT NULL UNIQUE COMMENT '课程分类ID',
   `hot` TINYINT(1) NOT NULL DEFAULT 0 COMMENT '热门课程[0:"普通课程",1:"热门课程"]',
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='课程信息表';
@@ -129,11 +130,11 @@ CREATE TABLE `c_hero`.`course_stage`(
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '主键',
   `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `stage_id` VARCHAR(11) NOT NULL UNIQUE COMMENT '课程期次ID',
+  `stage_id` VARCHAR(12) NOT NULL UNIQUE COMMENT '课程期次ID',
   `stage_times` INT NOT NULL COMMENT '课程节数',
   `stage_capacity` INT COMMENT '课程容量',
   `stage_left_capacity` INT COMMENT '剩余容量',
-  `course_id` VARCHAR(11) NOT NULL UNIQUE COMMENT '课程ID',
+  `course_id` VARCHAR(12) NOT NULL UNIQUE COMMENT '课程ID',
   `stage_name`  VARCHAR(8) NOT NULL UNIQUE COMMENT '课程期次名称',
   `start_time` DATE COMMENT '开课时间',
   `end_time` DATE COMMENT '结课时间',
@@ -152,10 +153,10 @@ CREATE TABLE `c_hero`.`order`(
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '主键',
   `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `order_id` VARCHAR(11) NOT NULL UNIQUE COMMENT '订单ID',
-  `member_id`VARCHAR(11) NOT NULL UNIQUE COMMENT '会员ID',
-  `course_id` VARCHAR(11) NOT NULL UNIQUE COMMENT '课程ID',
-  `stage_id`VARCHAR(11) NOT NULL UNIQUE COMMENT '期次ID',
+  `order_id` VARCHAR(12) NOT NULL UNIQUE COMMENT '订单ID',
+  `member_id`VARCHAR(12) NOT NULL UNIQUE COMMENT '会员ID',
+  `course_id` VARCHAR(12) NOT NULL UNIQUE COMMENT '课程ID',
+  `stage_id`VARCHAR(12) NOT NULL UNIQUE COMMENT '期次ID',
   `order_state` TINYINT(1) NOT NULL DEFAULT 0 COMMENT '订单状态[0:"提交订单",1:"交易成功"]',
   `order_comment` VARCHAR(128) COMMENT '课程评价',
   `order_reply_comment` VARCHAR(128) COMMENT '对学生的评价',
@@ -171,19 +172,24 @@ CREATE TABLE `c_hero`.`member_schedule`(
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '主键',
   `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `member_id`VARCHAR(11) NOT NULL UNIQUE COMMENT '会员ID',
-  `course_id` VARCHAR(11) NOT NULL UNIQUE COMMENT '课程ID',
-  `stage_id`VARCHAR(11) NOT NULL UNIQUE COMMENT '期次ID',
+  `member_id`VARCHAR(12) NOT NULL UNIQUE COMMENT '会员ID',
+  `course_id` VARCHAR(12) NOT NULL UNIQUE COMMENT '课程ID',
+  `stage_id`VARCHAR(12) NOT NULL UNIQUE COMMENT '期次ID',
   `left_times` INT COMMENT '剩余课程次数',
    PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='会员课程表';
 
 ALTER TABLE c_hero.member ADD member_email VARCHAR(24) NULL;
 
+/**
+ * @author iCodingStar
+ * @date 2016/7/31 19:31
+ * @version 1.0
+ */
 CREATE TABLE `c_hero`.`unique_key`(
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '主键',
   `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `member_id` VARCHAR(11) UNIQUE COMMENT '用户id',
+  `member_id` VARCHAR(12) UNIQUE COMMENT '用户id',
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='唯一键生成表';
