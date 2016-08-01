@@ -32,7 +32,7 @@
         <div class="member-info">
 
             <div class="image">
-                <img src="${pageContext.request.contextPath}/img/user/user.png">
+                <img src="${pageContext.request.contextPath}/img/member_center/meber/member.png">
             </div>
 
             <div class="info">
@@ -53,19 +53,19 @@
 
                 <div class="sub-menu">
                     <div class="item">
-                        <img src="${pageContext.request.contextPath}/img/user/no-pay.png" alt="待付款">
+                        <img src="${pageContext.request.contextPath}/img/member_center/no-pay.png" alt="待付款" onclick="alert('click')">
                         <span>待付款</span>
                     </div>
                     <div class="item">
-                        <img src="${pageContext.request.contextPath}/img/user/no-receive.png" alt="待收货">
+                        <img src="${pageContext.request.contextPath}/img/member_center/no-receive.png" alt="待收货">
                         <span>待收货</span>
                     </div>
                     <div class="item">
-                        <img src="${pageContext.request.contextPath}/img/user/no-commet.png" alt="待评价">
+                        <img src="${pageContext.request.contextPath}/img/member_center/no-commet.png" alt="待评价">
                         <span>待评价</span>
                     </div>
                     <div class="item">
-                        <img src="${pageContext.request.contextPath}/img/user/query-course.png" alt="课时查询">
+                        <img src="${pageContext.request.contextPath}/img/member_center/query-course.png" alt="课时查询">
                         <span>课时查询</span>
                     </div>
                     <div class="clear"></div>
@@ -74,6 +74,7 @@
             </div>
             <div class="clear"></div>
         </div>
+
         <div class="member-orders">
 
         </div>
