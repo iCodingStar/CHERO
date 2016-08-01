@@ -91,3 +91,7 @@ footer>p{
     padding: 16px;
 }
 /*footer结束*/
+/*清除浮动*/
+.clear{
+    clear: both;
+}

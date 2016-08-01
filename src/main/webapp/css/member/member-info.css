@@ -1,0 +1,80 @@
+p {
+    margin: 0px;
+}
+
+span {
+    color: white;
+}
+
+.container {
+
+}
+
+.member-info {
+    width: 900px;
+    height: 180px;
+}
+
+.member-info .image {
+    width: 180px;
+    height: 180px;
+    background-color: #161616;
+    float: left;
+    border-radius: 100px 0px 0px 100px;
+}
+
+.member-info .image img {
+    padding: 42px;
+}
+
+.member-info .info {
+    width: 720px;
+    height: 180px;
+    background-color: #161616;
+    float: left;
+}
+
+.member-info .info .info-details {
+    width: 240px;
+    margin: 50px 0px 20px 0px;
+    float: left;
+}
+
+.member-info .info .memberName {
+    display: inline-block;
+    font-family: "微软雅黑 Light";
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.member-info .info .info-details div .star {
+    display: inline-block;
+    background-image: url("../../img/user/star.png");
+    width: 100px;
+    height: 19px;
+}
+
+.member-info .info .info-details div .account-safety {
+    vertical-align: middle;
+    display: inline-block;
+    width: 60px;
+    height: 10px;
+    background-color: #ff1791;
+}
+
+.member-info .info .sub-menu {
+    float: left;
+}
+
+.member-info .info .sub-menu .item {
+    float: left;
+    margin: 50px 20px 20px;
+ }
+
+.member-info .info .sub-menu .item span{
+    display: block;
+}
+
+.member-orders {
+
+}
