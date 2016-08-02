@@ -27,18 +27,18 @@
 </header>
 <!--close-top-Header-menu-->
 <div class="user">
-    <div><span><img src="${pageContext.request.contextPath}/img/user/p1.png"></span>
+    <div><span><img src="${pageContext.request.contextPath}/img/member_center/p1.png"></span>
         <input class="pic" type="text" name="memberName" placeholder="用户名"></div>
-    <div><span><img src="${pageContext.request.contextPath}/img/user/p2.png"></span>
+    <div><span><img src="${pageContext.request.contextPath}/img/member_center/p2.png"></span>
         <input class="pic" type="password" name="password" placeholder="密码"></div>
     <div><input class="vali" type="text" name="">
-        <img src="${pageContext.request.contextPath}/img/user/p3.png">
+        <img src="${pageContext.request.contextPath}/img/member_center/p3.png">
     </div>
     <div><input type="submit" name="login" value="登陆"></div>
     <div>
         <a href="${pageContext.request.contextPath}/MemberCenter/Register/Index"><img
-                src="${pageContext.request.contextPath}/img/user/rig.png"></a>
-        <a href="#" class="right"><img src="${pageContext.request.contextPath}/img/user/forget.png"></a>
+                src="${pageContext.request.contextPath}/img/member_center/rig.png"></a>
+        <a href="#" class="right"><img src="${pageContext.request.contextPath}/img/member_center/forget.png"></a>
     </div>
 </div>
 <script>

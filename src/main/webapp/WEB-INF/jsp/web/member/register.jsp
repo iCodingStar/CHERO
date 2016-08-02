@@ -27,23 +27,23 @@
 </header>
 <!--close-top-Header-menu-->
 <div class="user">
-    <div><span><img src="${pageContext.request.contextPath}/img/user/p1.png"></span>
+    <div><span><img src="${pageContext.request.contextPath}/img/member_center/p1.png"></span>
         <input class="pic" type="text" name="memberName" placeholder="用户名"
                onblur="checkMemberName()">
     </div>
-    <div><span><img src="${pageContext.request.contextPath}/img/user/p4.png"></span>
+    <div><span><img src="${pageContext.request.contextPath}/img/member_center/p4.png"></span>
         <input class="pic" type="email" name="memberEmail" placeholder="邮箱"
                onblur="checkMemberEmail()">
     </div>
-    <div><span><img src="${pageContext.request.contextPath}/img/user/p2.png"></span>
+    <div><span><img src="${pageContext.request.contextPath}/img/member_center/p2.png"></span>
         <input class="pic" type="password" name="password" placeholder="密码"
                onblur="checkPassword()">
     </div>
-    <div><span><img src="${pageContext.request.contextPath}/img/user/p2.png"></span>
+    <div><span><img src="${pageContext.request.contextPath}/img/member_center/p2.png"></span>
         <input class="pic" type="password" name="confirmPassword" placeholder="再次确认密码"
                onmouseup="checkConfirmPassword()">
     </div>
-    <!-- <div><input class="vali" type="text" name=""><img src="img/user/p3.png"></div> -->
+    <!-- <div><input class="vali" type="text" name=""><img src="img/member_center/p3.png"></div> -->
     <div><input type="submit" name="" value="确定"></div>
     <div>${error}</div>
 
