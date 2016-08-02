@@ -4,7 +4,7 @@
     <title>Member</title>
     <jsp:include page="../../common/head.jsp"></jsp:include>
     <link href="${pageContext.request.contextPath}/css/member/member.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/css/member/member-info.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/member/index.css" rel="stylesheet">
 </head>
 <body>
 <!--top-Header-menu-->

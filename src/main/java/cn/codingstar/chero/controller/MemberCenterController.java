@@ -1,18 +1,3 @@
-/*
- * Copyright 2016-2016 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package cn.codingstar.chero.controller;
 
 import cn.codingstar.chero.common.authorization.CheckLogin;
@@ -30,10 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.io.IOException;
 
 /**
  * <p>Class: MemberController</p>
@@ -63,6 +44,163 @@ public class MemberCenterController extends AbstractWebController {
         mav.setViewName("/member/index");
         return mav;
     }
+
+    /***
+     * 个人信息
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Info"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberInfo() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/info");
+        return mav;
+    }
+
+    /***
+     * 用户地址
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Address"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberAddress() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/address");
+        return mav;
+    }
+
+    /***
+     * 购物车
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Cart"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberCart() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/cart");
+        return mav;
+    }
+
+    /***
+     * 当前订单
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Orders"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberOrders() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/orders");
+        return mav;
+    }
+
+    /***
+     * 所有订单
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Orders/All"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberAllOrders() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/orders-all");
+        return mav;
+    }
+
+    /***
+     * 未支付订单
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Orders/Unpaid"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberUnpaidOrders() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/orders-unpaid");
+        return mav;
+    }
+
+    /***
+     * 会员账户
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Account"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberAccount() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/account");
+        return mav;
+    }
+
+    /***
+     * 会员账户安全
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Account/Safety"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberAccountSafety() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/account-safety");
+        return mav;
+    }
+
+    /***
+     * 会员账户修改
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Account/Modify/Password"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberAccountModify() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/account-modify");
+        return mav;
+    }
+
+    /***
+     * 会员服务
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Client/Service"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberClientService() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/client-service");
+        return mav;
+    }
+
+    /***
+     * 会员账户修改
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Advices"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberAdvices() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/advices");
+        return mav;
+    }
+
+    /***
+     * 会员账户修改
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Aftermarket"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberAftermarket() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/aftermarket");
+        return mav;
+    }
+
 
     /***
      * 检查用户名是否已存在
@@ -136,27 +274,27 @@ public class MemberCenterController extends AbstractWebController {
     public void checkRegister(Member member) {
         //用户注册
         boolean registerSuccess = memberService.register(member);
-        if (registerSuccess){
+        if (registerSuccess) {
             //用户登录
             MemberDTO memberDTO = memberService.getLoginMember(member.getMemberName());
             loginSuccess(memberDTO);
             renderJson(true);
-        }else {
-            setRequestAttribute("error","注册失败！");
+        } else {
+            setRequestAttribute("error", "注册失败！");
             renderJson(false);
         }
     }
 
     /**
+     * @return java.lang.String
      * @author iCodingStar
      * @params []
-     * @return java.lang.String
      * @description 注册成功
      * @since 1.0 2016/7/31 1:04
      */
-    @RequestMapping(value = {"/Register/Success"},method = RequestMethod.GET)
+    @RequestMapping(value = {"/Register/Success"}, method = RequestMethod.GET)
     @CheckLogin
-    public String registerSuccess(){
+    public String registerSuccess() {
         return "/member/register-success";
     }
 }
