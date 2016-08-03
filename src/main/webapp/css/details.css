@@ -1,0 +1,36 @@
+/*content开始*/
+body {
+  background-color: #242424;
+}
+.content {
+  /*background-color: #242424;*/
+  width: 1132px;
+  margin: 0 auto;
+}
+
+.content .back-button {
+  margin-top: 75px;
+  color: #e13541;
+}
+
+.content .title {
+  color: #e13541;
+  font-size: 30px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.content .image {
+  margin: 50px 0;
+}
+
+.content .image img{
+  height: 545px;
+  width: 1132px;
+}
+
+.content .text p{
+  color: white;
+  text-indent:2em
+}
+/*content结束*/

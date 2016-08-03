@@ -1,18 +1,24 @@
 
-a{
-    text-decoration:none;
+a {
+    text-decoration: none;
 }
-a:link,a:visited,a:hover,a:active{
+
+a:link, a:visited, a:hover, a:active {
     color: white;
 }
-body{
+
+ul, li {
+    list-style: none;
+}
+
+body {
     background-color: #242424;
     min-width: 1920px;
 }
 
 /*顶部导航*/
 /*header开始*/
-header{
+header {
     height: 100px;
     background-color: black;
 }
@@ -23,20 +29,20 @@ header > .logo {
     padding-top: 20px;
 }
 
-header > nav{
+header > nav {
     color: white;
     line-height: 100px;
     float: right;
     margin-right: 50px;
 }
 
-header > nav > ul{
+header > nav > ul {
     list-style: none;
     margin: 0;
     display: inline-block;
 }
 
-header > nav > ul > li{
+header > nav > ul > li {
     display: inline;
     font-size: 20px;
     /*font-family: '';*/
@@ -44,7 +50,7 @@ header > nav > ul > li{
     margin: 8px;
 }
 
-.active{
+header > nav > ul > .active {
     background-color: #e33641;
     /*border: 1px solid white;*/
     border-radius: 1px;
@@ -54,24 +60,27 @@ header > nav > ul > li{
 /*header结束*/
 
 /*内容开始*/
-.content>img.back{
+.content > img.back {
     height: 812px;
     width: 1920px;
     border: 0;
 }
 
-.content>.college{
+.content > .college {
     text-align: center;
 }
-.content>.college>#college{
+
+.content > .college > #college {
     vertical-align: middle;
     padding: 50px;
     width: 675px;
 }
-.content>.word{
+
+.content > .word {
     text-align: center;
 }
-.content>.word>#word{
+
+.content > .word > #word {
     width: 75%;
     margin-bottom: 200px;
 }
@@ -80,18 +89,20 @@ header > nav > ul > li{
 
 /*footer开始
 footer {height:40px;}*/
-footer span{
+footer span {
     height: 1px;
-    border-top: 5px solid #e33641; 
+    border-top: 5px solid #e33641;
     display: block;
 }
-footer>p{
+
+footer > p {
     text-align: center;
     color: white;
     padding: 16px;
 }
+
 /*footer结束*/
 /*清除浮动*/
-.clear{
+.clear {
     clear: both;
 }

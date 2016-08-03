@@ -28,6 +28,7 @@
 <!--close-top-Header-menu-->
 <div class="container">
     <jsp:include page="../../common/member_left_nav.jsp"></jsp:include>
+
     <div class="main">
         <div class="member-info">
 
@@ -53,7 +54,8 @@
 
                 <div class="sub-menu">
                     <div class="item">
-                        <img src="${pageContext.request.contextPath}/img/member_center/no-pay.png" alt="待付款" onclick="alert('click')">
+                        <img src="${pageContext.request.contextPath}/img/member_center/no-pay.png" alt="待付款"
+                             onclick="alert('click')">
                         <span>待付款</span>
                     </div>
                     <div class="item">
@@ -70,16 +72,186 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-                <dic class="clear"></dic>
+
+                <div class="clear"></div>
+
             </div>
+
             <div class="clear"></div>
+        </div>
+
+        <div class="member-orders-null">
+
+            <div class="header">
+                <div class="title"><span>我的订单</span></div>
+                <div class="view-orders"><a href="#">查看所有订单</a></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="content">
+                <span></span>
+                <img src="${pageContext.request.contextPath}/img/member_center/cart-null.png">
+            </div>
+
         </div>
 
         <div class="member-orders">
 
-        </div>
+            <div class="header">
+                <div class="title"><span>我的订单</span></div>
+                <div class="view-orders"><a href="#">查看所有订单</a></div>
+                <div class="clear"></div>
+            </div>
 
+            <div class="content">
+
+                <div class="orders">
+
+                    <div class="order">
+
+                        <div class="header">
+                            <div class="time">
+                                <span>2016-08-06 17:00:00</span>
+                            </div>
+                            <div class="order-no">
+                                订单号：<span>201608060001</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="content">
+                            <div class="course">
+                                <div class="course-pic">
+                                    <img src="${pageContext.request.contextPath}/img/market/m3.png">
+                                </div>
+                                <div class="course-name">
+                                    <span>C-HERO 2016 暑期集训一、三期课程</span>
+                                </div>
+                                <div class="course-number">
+                                    x<span>1</span>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="price">
+                                <div class="content">
+                                    <span>￥1000.0元</span>
+                                    <span class="line"></span>
+                                    <span>在线支付</span>
+                                </div>
+                            </div>
+                            <div class="order-state">
+                                <div class="content">
+                                    <span>待付款</span>
+                                    <span class="line"></span>
+                                    <span>订单详情</span>
+                                </div>
+                            </div>
+                            <div class="order-operation">
+                                <a href="#">立即购买</a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+                    <div class="order">
+
+                        <div class="header">
+                            <div class="time">
+                                <span>2016-08-06 17:00:00</span>
+                            </div>
+                            <div class="order-no">
+                                订单号：<span>201608060001</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="content">
+                            <div class="course">
+                                <div class="course-pic">
+                                    <img src="${pageContext.request.contextPath}/img/market/m3.png">
+                                </div>
+                                <div class="course-name">
+                                    <span>C-HERO 2016 暑期集训一、三期课程</span>
+                                </div>
+                                <div class="course-number">
+                                    x<span>1</span>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="price">
+                                <div class="content">
+                                    <span>￥1000.0元</span>
+                                    <span class="line"></span>
+                                    <span>在线支付</span>
+                                </div>
+                            </div>
+                            <div class="order-state">
+                                <div class="content">
+                                    <span>待付款</span>
+                                    <span class="line"></span>
+                                    <span>订单详情</span>
+                                </div>
+                            </div>
+                            <div class="order-operation">
+                                <a href="#">立即购买</a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+                    <div class="order">
+
+                        <div class="header">
+                            <div class="time">
+                                <span>2016-08-06 17:00:00</span>
+                            </div>
+                            <div class="order-no">
+                                订单号：<span>201608060001</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="content">
+                            <div class="course">
+                                <div class="course-pic">
+                                    <img src="${pageContext.request.contextPath}/img/market/m3.png">
+                                </div>
+                                <div class="course-name">
+                                    <span>C-HERO 2016 暑期集训一、三期课程</span>
+                                </div>
+                                <div class="course-number">
+                                    x<span>1</span>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="price">
+                                <div class="content">
+                                    <span>￥1000.0元</span>
+                                    <span class="line"></span>
+                                    <span>在线支付</span>
+                                </div>
+                            </div>
+                            <div class="order-state">
+                                <div class="content">
+                                    <span>待付款</span>
+                                    <span class="line"></span>
+                                    <span>订单详情</span>
+                                </div>
+                            </div>
+                            <div class="order-operation">
+                                <a href="#">立即购买</a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
     </div>
+
     <div class="clear"></div>
 </div>
 <jsp:include page="../../common/footer.jsp"/>

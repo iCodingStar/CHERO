@@ -29,8 +29,17 @@
 <div class="container">
     <jsp:include page="../../common/member_left_nav.jsp"></jsp:include>
     <div class="main">
+        <div class="header">
+            <ul>
+                <li><a href="#">基本信息</a></li>
+                <li><a href="#">头像照片</a></li>
+                <li  class="active"><a href="#">更多个人信息</a></li>
+            </ul>
+        </div>
         <div class="content">
+            <div class="basic-info">
 
+            </div>
         </div>
     </div>
     <div class="clear"></div>

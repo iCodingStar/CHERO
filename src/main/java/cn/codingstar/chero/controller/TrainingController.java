@@ -41,4 +41,15 @@ public class TrainingController {
     private ModelAndView trainingIndex() {
         return new ModelAndView("training/index");
     }
+
+    /***
+     * 预约体验详情页
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Article"}, method = {RequestMethod.GET})
+    public ModelAndView trainingArticle() {
+        ModelAndView mav = new ModelAndView("/training/article");
+        return mav;
+    }
 }

@@ -2,10 +2,147 @@ p {
     margin: 0px;
 }
 
-span {
+span{
     color: white;
 }
 
+div{
+    font-family: 微软雅黑;
+    font-size: 18px;
+}
+
+.main .content .basic-info span{
+    color: #161616;
+    padding: 6px 8px;
+}
 .container {
 
+}
+
+.main{
+    background-color: #ffffff;
+}
+
+.main .header ul li{
+    display: inline-block;
+    font-size: 20px;
+    padding: 7px;
+    margin: 8px;
+}
+
+.main .header ul li a{
+    color: #B1B1B2;
+}
+
+.main .header ul .active a{
+    color: #E13641;
+}
+
+/*会员信息*/
+.member-info {
+    width: 400px;
+    height: 152px;
+    float: right;
+    margin: -50px 30px 0px 0px;
+}
+
+.member-info .image {
+    width: 152px;
+    height: 152px;
+    background-color: #161616;
+    float: left;
+    border-radius: 100px 0px 0px 100px;
+}
+
+.member-info .image img {
+    padding: 28px;
+}
+
+.member-info .info {
+    width: 248px;
+    height: 152px;
+    background-color: #161616;
+    float: left;
+}
+
+.member-info .info .info-details {
+    width: 240px;
+    margin: 30px 0px 20px 0px;
+    float: left;
+}
+
+.member-info .info .memberName {
+    display: inline-block;
+    font-family: "微软雅黑 Light";
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.member-info .info .info-details div .star {
+    display: inline-block;
+    background-image: url("../../img/member_center/star.png");
+    width: 100px;
+    height: 19px;
+}
+
+.member-info .info .info-details div .account-safety {
+    vertical-align: middle;
+    display: inline-block;
+    width: 60px;
+    height: 10px;
+    background-color: #ff1791;
+}
+
+/*会员信息*/
+
+/*会员基本信息*/
+.main .content .basic-info{
+    float: left;
+    margin: 20px 10px 0px 60px;
+}
+
+.main .content .basic-info div{
+    width: 246px;
+    height: 62px;
+}
+
+.main .content .basic-info div.submit{
+    margin: auto;
+    text-align: center;
+    width: 190px;
+    height: 26px;
+}
+
+.main .content .basic-info input[name=memberName]{
+    width: 190px;
+    height: 32px;
+    text-align: center;
+}
+
+.main .content .basic-info input[name=memberNickName]{
+    width: 190px;
+    height: 32px;
+    text-align: center;
+}
+
+.main .content .basic-info input[name=memberBirthday]{
+    width: 190px;
+    height: 32px;
+    text-align: center;
+}
+
+.main .content .basic-info input[name=memberEmail]{
+    width: 190px;
+    height: 32px;
+    text-align: center;
+}
+
+.main .content .basic-info input[type=submit]{
+    width: 72px;
+    height: 32px;
+    background-color: #E13641;
+    border: none;
+    color: white;
+    font-family: "微软雅黑 Light";
+    font-size: 16px;
 }

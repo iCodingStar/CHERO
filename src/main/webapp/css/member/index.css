@@ -71,9 +71,9 @@ span {
     float: left;
     margin: 50px 20px 20px;
     text-align: center;
- }
+}
 
-.member-info .info .sub-menu .item span{
+.member-info .info .sub-menu .item span {
     display: block;
     margin-top: 10px;
     font-family: "微软雅黑 Light";
@@ -81,6 +81,188 @@ span {
     color: #eeeeee;
 }
 
-.member-orders {
-
+/*orders-null display area*/
+.member-orders-null {
+    margin-top: 15px;
+    height: 520px;
+    background-color: #161616;
+    border-radius: 10px;
+    /*display: none;*/
 }
+
+.member-orders-null .header,
+.member-orders > .header {
+    padding: 30px 15px 15px 15px;
+}
+
+.member-orders-null .header .title,
+.member-orders > .header .title {
+    float: left;
+}
+
+.member-orders-null .header .view-orders,
+.member-orders > .header .view-orders {
+    float: right;
+}
+
+.member-orders > .header .view-orders a,
+.member-orders-null .header .view-orders a {
+    color: #e33641;
+}
+
+.member-orders-null .content {
+    width: 900px;
+    height: 455px;
+    text-align: center;
+}
+
+.member-orders-null .content span {
+    height: 90%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.member-orders-null .content img {
+    vertical-align: middle;
+}
+
+/*orders-null display area*/
+
+/*orders display area*/
+.member-orders {
+    display: none;
+    margin-top: 15px;
+    height: 520px;
+    background-color: #161616;
+}
+
+.member-orders .content .order {
+    margin: 30px;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+}
+
+.member-orders .content .order span{
+    color: #000000;
+}
+
+/*订单时间*/
+.member-orders .content .order .content > div{
+    margin: 10px 5px 15px 5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.member-orders .content .order .time{
+    float: left;
+    padding: 5px 20px 5px 20px;
+}
+
+/*订单编号*/
+.member-orders .content .order .order-no{
+    float: left;
+    padding: 5px 20px 5px 20px;
+}
+
+/*订单详情*/
+.member-orders .content .order .content .course{
+    float: left;
+    width: 360px;
+}
+
+.member-orders .content .order .content .price{
+    float: left;
+    width: 180px;
+    height: 96px;
+}
+
+.member-orders .content .order .content .order-state{
+    float: left;
+    width: 130px;
+    height: 96px;
+}
+
+.member-orders .content .order .content .order-operation{
+    float: left;
+    width: 120px;
+    height: 96px;
+}
+
+/*课程详情*/
+.member-orders .content .order .content .course div{
+    margin-right: 10px;
+}
+
+.member-orders .content .order .content .course .course-pic{
+    float: left;
+    width: 96px;
+    height: 96px;
+}
+
+.member-orders .content .order .content .course .course-pic img{
+    width: 96px;
+    height: 96px;
+}
+
+.member-orders .content .order .content .course .course-name{
+    float: left;
+    width: 200px;
+    height: 96px;
+}
+
+.member-orders .content .order .content .course .course-name span{
+    display: block;
+    margin-top: 25px;
+}
+
+.member-orders .content .order .content .course .course-number{
+    margin-top: 25px;
+    width: 34px;
+    float: left;
+}
+
+/*order-price*/
+.member-orders .content .order .content .price .content{
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+}
+
+.member-orders .content .order .content .price span{
+    line-height: 24px;
+    height: 24px;
+    display: block;
+}
+
+.member-orders .content .order .content .price span.line{
+    background-color: #e30006;
+    margin: auto;
+    width: 120px;
+    height: 2px;
+}
+
+/*order-state*/
+.member-orders .content .order .content .order-state .content{
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+}
+
+.member-orders .content .order .content .order-state span{
+    line-height: 24px;
+    height: 24px;
+    display: block;
+}
+
+.member-orders .content .order .content .order-state span.line{
+    background-color: #e30006;
+    margin: auto;
+    width: 120px;
+    height: 2px;
+}
+
+.member-orders .content .order .content .order-operation a{
+    display: block;
+    line-height: 96px;
+    text-align: center;
+    color: #e30006;
+}
+/*orders display area*/

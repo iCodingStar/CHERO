@@ -1,8 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html lang="zh-CN">
 <head>
     <title>体能训练</title>
+    <meta charset="UTF-8">
     <jsp:include page="../../common/head.jsp"></jsp:include>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/master1.css" media="screen" title="no title"
+          charset="utf-8">
 </head>
 <body>
 <!--top-Header-menu-->
@@ -24,6 +27,54 @@
     </nav>
 </header>
 <!--close-top-Header-menu-->
-<jsp:include page="../../common/footer.jsp"/>
+<div class="content">
+
+    <div class="title"><b></b><span>相关文章</span><b></b></div>
+
+    <div class="card">
+        <img src="${pageContext.request.contextPath}/img/1.jpg" alt="" class="card-pic"><a href="${pageContext.request.contextPath}/Training/Article"><div class="card-text">
+        <h1>暑假“72变”集训</h1>
+        <p style="color: white;">20天，夏练三伏，每节课程2小时，在时间范围内勇猛提高技术，让孩子在技术上、体能上心理上得到综合的进步</p>
+    </div>
+    </a>
+        <br>
+        <a href="${pageContext.request.contextPath}/Training/Article"><div class="card-text">
+            <h1>暑假“72变”集训</h1>
+            <p style="color: white;">20天，夏练三伏，每节课程2小时，在时间范围内勇猛提高技术，让孩子在技术上、体能上心理上得到综合的进步</p>
+        </div><!--
+        --><img src="${pageContext.request.contextPath}/img/2.jpg" alt="" class="card-pic">
+            <br>
+            <a href="${pageContext.request.contextPath}/Training/Article">
+                <img src="${pageContext.request.contextPath}/img/3.jpg" alt="" class="card-pic"></a><!--
+        --><div class="card-text">
+                <h1>暑假“72变”集训</h1>
+                <p style="color: white;">20天，夏练三伏，每节课程2小时，在时间范围内勇猛提高技术，让孩子在技术上、体能上心理上得到综合的进步</p>
+            </div></a>
+    </div>
+
+    <div class="title"><b></b><span>相关视频</span><b></b></div>
+
+    <div class="card">
+        <img src="${pageContext.request.contextPath}/img/1.jpg" alt="" class="card-pic"><!--
+        --><a href="${pageContext.request.contextPath}/Training/Article"><div class="card-text">
+        <h1>暑假“72变”集训</h1>
+        <p style="color: white;">20天，夏练三伏，每节课程2小时，在时间范围内勇猛提高技术，让孩子在技术上、体能上心理上得到综合的进步</p>
+    </div></a>
+        <br>
+        <a href="${pageContext.request.contextPath}/Training/Article"><div class="card-text">
+            <h1>暑假“72变”集训</h1>
+            <p style="color: white;">20天，夏练三伏，每节课程2小时，在时间范围内勇猛提高技术，让孩子在技术上、体能上心理上得到综合的进步</p>
+        </div><!--
+        --><img src="${pageContext.request.contextPath}/img/2.jpg" alt="" class="card-pic">
+            <br>
+            <a href="${pageContext.request.contextPath}/Training/Article">
+                <img src="${pageContext.request.contextPath}/img/3.jpg" alt="" class="card-pic"></a><!--
+        --><div class="card-text">
+                <h1>暑假“72变”集训</h1>
+                <p style="color: white;">20天，夏练三伏，每节课程2小时，在时间范围内勇猛提高技术，让孩子在技术上、体能上心理上得到综合的进步</p>
+            </div></a>
+    </div>
+</div>
+<jsp:include page="../../common/footer.jsp"></jsp:include>
 </body>
 </html>
