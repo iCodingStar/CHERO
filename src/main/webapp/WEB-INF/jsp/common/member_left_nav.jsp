@@ -17,11 +17,11 @@
             <li class="item"><a href="${pageContext.request.contextPath}/MemberCenter/Orders/All">往期订单</a></li>
             <li class="item"><a href="${pageContext.request.contextPath}/MemberCenter/Orders/Unpaid">未完成订单</a></li>
 
-            <li><a href="${pageContext.request.contextPath}/MemberCenter/Account">账户设置</a></li>
-            <li class="item"><a href="${pageContext.request.contextPath}/MemberCenter/Account/Safety">账户安全</a></li>
+            <li><a href="#">账户设置</a></li>
+            <li class="item"><a href="#">账户安全</a></li>
             <li class="item"><a href="${pageContext.request.contextPath}/MemberCenter/Account/Modify/Password">修改密码</a></li>
 
-            <li><a href="${pageContext.request.contextPath}/MemberCenter/Client/Service">客户服务</a></li>
+            <li><a href="#">客户服务</a></li>
             <li class="item"><a href="${pageContext.request.contextPath}/MemberCenter/Advices">意见建议</a></li>
             <li class="item"><a href="${pageContext.request.contextPath}/MemberCenter/Aftermarket">售后服务</a></li>
 

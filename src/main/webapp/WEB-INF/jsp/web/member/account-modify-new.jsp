@@ -6,26 +6,30 @@
     <link href="${pageContext.request.contextPath}/css/member/member.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/member/modify.css" rel="stylesheet">
     <style>
-        .main .container .header .top span:nth-child(1),
-        .main .container .header .top span:nth-child(2),
-        .main .container .header .top span:nth-child(3) {
+        .main .container .header span:nth-child(4),
+        .main .container .header span:nth-child(5),
+        .main .container .header span:nth-child(6){
             background-color: #E13641;
             color: #fefefe;
         }
-
-        .main .container .header .bottom {
+        .main .container .header .bottom{
             width: 225px;
             text-align: center;
             padding: 12px 0px;
+            margin-left: 225px;
         }
-
-        .content .email .send-code{
-            padding: 7px 8px;
-            background-color: #E13641;
-            border-radius: 6px;
+        .main .container .header .bottom span{
+            color: red;
         }
-
-
+        .content{
+            text-align: center;
+        }
+        .content div{
+            margin: 20px 80px;
+        }
+        .content div input{
+            height: 42px;
+        }
     </style>
 </head>
 <body>
@@ -51,23 +55,22 @@
                     <div class="clear"></div>
                 </div>
                 <div class="bottom">
-                    <span>验证身份</span>
+                    <span>修改密码</span>
                 </div>
             </div>
 
             <div class="content">
-                <form action="${pageContext.request.contextPath}/MemberCenter/Account/Modify/Password/Verify">
-                    <div class="email">
-                        验证邮箱：
-                        <span class="email">439295245@qq.com</span>
-                        <span class="send-code"><a href="#">获取验证码</a></span>
+                <form action="${pageContext.request.contextPath}/MemberCenter/Account/Modify/Password/New">
+                    <div class="memberPassword">
+                        <label for="memberPassword">&nbsp;&nbsp;&nbsp;新密码</label>
+                        <input type="text" id="memberPassword" name="memberPassword">
                     </div>
-                    <div class="verify-code">
-                        <label for="verify-code">验证码：</label>
-                        <input type="text" id="verify-code" name="verify-code">
+                    <div class="memberConfirmPassword">
+                        <label for="memberConfirmPassword">确认密码</label>
+                        <input type="text" id="memberConfirmPassword" name="memberConfirmPassword">
                     </div>
                     <div class="submit">
-                        <input type="submit" value="验证">
+                        <input type="submit" value="提交修改">
                     </div>
                 </form>
             </div>

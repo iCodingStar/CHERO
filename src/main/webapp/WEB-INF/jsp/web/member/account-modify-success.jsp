@@ -6,9 +6,9 @@
     <link href="${pageContext.request.contextPath}/css/member/member.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/member/modify.css" rel="stylesheet">
     <style>
-        .main .container .header .top span:nth-child(1),
-        .main .container .header .top span:nth-child(2),
-        .main .container .header .top span:nth-child(3) {
+        .main .container .header span:nth-child(7),
+        .main .container .header span:nth-child(8),
+        .main .container .header span:nth-child(9) {
             background-color: #E13641;
             color: #fefefe;
         }
@@ -17,14 +17,26 @@
             width: 225px;
             text-align: center;
             padding: 12px 0px;
+            margin-left: 450px;
         }
 
-        .content .email .send-code{
-            padding: 7px 8px;
-            background-color: #E13641;
-            border-radius: 6px;
+        .main .container .header .bottom span {
+            color: red;
         }
 
+        .main .container .content .success-tips a {
+            color: red;
+            text-decoration: solid;
+        }
+
+        .main .container .content{
+            margin: 150px 0px;
+        }
+
+        .main .container .content div{
+            text-align: center;
+            margin: 50px auto;
+        }
 
     </style>
 </head>
@@ -37,6 +49,7 @@
 
     <div class="main">
         <div class="container">
+
             <div class="header">
                 <div class="top">
                     <span class="line"></span>
@@ -51,25 +64,14 @@
                     <div class="clear"></div>
                 </div>
                 <div class="bottom">
-                    <span>验证身份</span>
+                    <span>修改成功</span>
                 </div>
             </div>
 
             <div class="content">
-                <form action="${pageContext.request.contextPath}/MemberCenter/Account/Modify/Password/Verify">
-                    <div class="email">
-                        验证邮箱：
-                        <span class="email">439295245@qq.com</span>
-                        <span class="send-code"><a href="#">获取验证码</a></span>
-                    </div>
-                    <div class="verify-code">
-                        <label for="verify-code">验证码：</label>
-                        <input type="text" id="verify-code" name="verify-code">
-                    </div>
-                    <div class="submit">
-                        <input type="submit" value="验证">
-                    </div>
-                </form>
+                <div class="success-tips">
+                    密码修改成功，请 <a href="${pageContext.request.contextPath}/MemberCenter/Index">重新登陆</a> ！
+                </div>
             </div>
         </div>
     </div>

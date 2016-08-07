@@ -184,7 +184,33 @@ public class MemberCenterController extends AbstractWebController {
     @CheckLogin
     public ModelAndView memberAccountModify() {
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("/member/account-modify");
+        mav.setViewName("member/account-modify");
+        return mav;
+    }
+
+    /***
+     * 会员账户修改
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Account/Modify/Password/Verify"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberAccountModifyVerify() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("member/account-modify-new");
+        return mav;
+    }
+
+    /***
+     * 会员账户修改
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Account/Modify/Password/New"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberAccountModifyNew() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("member/account-modify-success");
         return mav;
     }
 

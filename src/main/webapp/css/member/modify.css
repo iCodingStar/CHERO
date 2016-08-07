@@ -1,0 +1,82 @@
+
+.container .main {
+    background-color: #161616;
+    border-radius: 5px;
+    height: 520px;
+}
+
+div, span, a{
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-family: "微软雅黑 Light";
+}
+
+input{
+    font-family: "微软雅黑 Light";
+}
+
+.main .container {
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.main .container .header {
+
+}
+
+.main .container .header span:first-child {
+    border-radius: 3px 0px 0px 3px;
+}
+
+.main .container .header span:last-child {
+    border-radius: 0px 3px 3px 0px;
+}
+
+.main .container .header .line {
+    display: block;
+    width: 92px;
+    height: 6px;
+    background-color: white;
+    float: left;
+    margin: 20px 0px;
+}
+
+.main .container .header .number {
+    display: block;
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 50%;
+    float: left;
+}
+
+.main .container .header .bottom span {
+    color: red;
+}
+
+.content{
+    margin-top: 50px;
+}
+
+.content div{
+    width: 420px;
+    height: 48px;
+    margin-bottom: 20px;
+}
+
+
+input[type=submit]{
+    padding: 7px 8px;
+    background-color: #E13641;
+    border-radius: 6px;
+    border: 0px;
+    color: #ffffff;
+    width: 160px;
+    text-align: center;
+}
