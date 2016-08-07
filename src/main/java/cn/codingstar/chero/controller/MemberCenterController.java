@@ -59,6 +59,32 @@ public class MemberCenterController extends AbstractWebController {
     }
 
     /***
+     * 个人照片
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Info/Photo"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberInfoPhoto() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/info-photo");
+        return mav;
+    }
+
+    /***
+     * 个人照片
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Info/More"}, method = {RequestMethod.GET})
+    @CheckLogin
+    public ModelAndView memberInfoMore() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/member/info-more");
+        return mav;
+    }
+
+    /***
      * 用户地址
      *
      * @return

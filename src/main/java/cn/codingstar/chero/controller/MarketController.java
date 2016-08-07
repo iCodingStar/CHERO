@@ -42,4 +42,15 @@ public class MarketController {
         ModelAndView mav = new ModelAndView("market/index");
         return mav;
     }
+
+    /***
+     * 在线商城首页
+     *
+     * @return
+     */
+    @RequestMapping(value = {"/Item/Detail"}, method = RequestMethod.GET)
+    public ModelAndView marketItemDetail() {
+        ModelAndView mav = new ModelAndView("market/item-detail");
+        return mav;
+    }
 }

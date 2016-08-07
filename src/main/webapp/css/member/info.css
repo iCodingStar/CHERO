@@ -2,40 +2,45 @@ p {
     margin: 0px;
 }
 
-span{
+span {
     color: white;
 }
 
-div{
+div {
     font-family: 微软雅黑;
     font-size: 18px;
 }
 
-.main .content .basic-info span{
+.main .content .basic-info span {
     color: #161616;
     padding: 6px 8px;
 }
+
 .container {
 
 }
 
-.main{
+.main {
     background-color: #ffffff;
 }
 
-.main .header ul li{
+.main .header ul li {
     display: inline-block;
     font-size: 20px;
     padding: 7px;
     margin: 8px;
 }
 
-.main .header ul li a{
+.main .header ul li a {
     color: #B1B1B2;
 }
 
-.main .header ul .active a{
-    color: #E13641;
+.main .header ul .active {
+    background-color: white;
+}
+
+.main .header ul .active a {
+    color: #ff1791;
 }
 
 /*会员信息*/
@@ -49,7 +54,7 @@ div{
 .member-info .image {
     width: 152px;
     height: 152px;
-    background-color: #161616;
+    background-color: rgba(22, 22, 22, 0.66);
     float: left;
     border-radius: 100px 0px 0px 100px;
 }
@@ -61,7 +66,7 @@ div{
 .member-info .info {
     width: 248px;
     height: 152px;
-    background-color: #161616;
+    background-color: rgba(22, 22, 22, 0.66);
     float: left;
 }
 
@@ -96,50 +101,50 @@ div{
 /*会员信息*/
 
 /*会员基本信息*/
-.main .content .basic-info{
+.main .content .basic-info {
     float: left;
     margin: 20px 10px 0px 60px;
 }
 
-.main .content .basic-info div{
-    width: 246px;
+.main .content .basic-info div {
+    width: 300px;
     height: 62px;
 }
 
-.main .content .basic-info div.submit{
+.main .content .basic-info div.submit {
     margin: auto;
     text-align: center;
-    width: 190px;
-    height: 26px;
+    width: 203px;
+    height: 29px;
 }
 
-.main .content .basic-info input[name=memberName]{
-    width: 190px;
-    height: 32px;
+.main .content .basic-info input[name=memberName] {
+    width: 203px;
+    height: 29px;
     text-align: center;
 }
 
-.main .content .basic-info input[name=memberNickName]{
-    width: 190px;
-    height: 32px;
+.main .content .basic-info input[name=memberNickName] {
+    width: 203px;
+    height: 29px;
     text-align: center;
 }
 
-.main .content .basic-info input[name=memberBirthday]{
-    width: 190px;
-    height: 32px;
+.main .content .basic-info input[name=memberBirthday] {
+    width: 203px;
+    height: 29px;
     text-align: center;
 }
 
-.main .content .basic-info input[name=memberEmail]{
-    width: 190px;
-    height: 32px;
+.main .content .basic-info input[name=memberEmail] {
+    width: 203px;
+    height: 29px;
     text-align: center;
 }
 
-.main .content .basic-info input[type=submit]{
-    width: 72px;
-    height: 32px;
+.main .content .basic-info input[type=submit] {
+    width: 112px;
+    height: 29px;
     background-color: #E13641;
     border: none;
     color: white;

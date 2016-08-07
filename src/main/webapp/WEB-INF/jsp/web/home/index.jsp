@@ -19,7 +19,12 @@
             <li class="active"><a href="${pageContext.request.contextPath}/HomePage/Index">首页</a></li>
             <li><a href="${pageContext.request.contextPath}/Academy/Index">学院介绍</a></li>
             <li><a href="${pageContext.request.contextPath}/Trainer/Index">师资力量</a></li>
-            <li><a href="${pageContext.request.contextPath}/Training/Index">体能训练</a></li>
+            <li><a href="${pageContext.request.contextPath}/Training/Index">体能训练</a>
+                <ul>
+                    <li><a href="${pageContext.request.contextPath}/Training/Index?#article">相关文章</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Training/Index?#video">相关视频</a></li>
+                </ul>
+            </li>
             <li><a href="${pageContext.request.contextPath}/Experience/Index">预约体验</a></li>
             <li><a href="${pageContext.request.contextPath}/Market/Index">运动商城</a></li>
             <li><a href="${pageContext.request.contextPath}/MemberCenter/Index">会员中心</a></li>
@@ -31,61 +36,72 @@
 <div class="slider" id="slider">
     <div class="slider-inner">
         <div class="item">
-            <img class="img" style="background: url('${pageContext.request.contextPath}/img/slide1.jpg');">
+            <img class="img" src="${pageContext.request.contextPath}/img/slide1.jpg">
         </div>
         <div class="item">
-            <img class="img" style="background: url('${pageContext.request.contextPath}/img/slide2.jpg');">
+            <img class="img" src="${pageContext.request.contextPath}/img/slide2.jpg">
         </div>
     </div>
 </div>
 
 <div id="b-teacher" style="background: url('${pageContext.request.contextPath}/img/1-teacher.jpg')">
     <div id="teacher" class="middle">
-        <a href="../teachers/index.jsp"><img src="../../../img/1t3.jpg"></a>
-        <img src="../../../img/1t1.jpg">
-        <img src="../../../img/1t2.jpg">
+        <a href="${pageContext.request.contextPath}/Trainer/Index"><img
+                src="${pageContext.request.contextPath}/img/1t3.jpg"></a>
+        <img src="${pageContext.request.contextPath}/img/1t1.jpg">
+        <img src="${pageContext.request.contextPath}/img/1t2.jpg">
     </div>
 </div>
 
 
-<div id="b-more" style="background: url('../../../img/1-class.jpg')">
+<div id="b-more" style="background: url('${pageContext.request.contextPath}/img/1-class.jpg')">
     <h2>课程介绍<span class="item-english">Course introduction</span></h2>
     <div id="b-course">
+
         <div class="course">
-            <a href="../market/index.jsp"><img src="../../../img/d1.jpg"></a>
+            <a href="${pageContext.request.contextPath}/Market/Index?#badminton"><img
+                    src="${pageContext.request.contextPath}/img/d1.jpg"></a>
             <h3>羽毛球<span>badminton</span></h3>
             <span class="red"></span>
             <div>
-                <span><a href="../market/index.jsp">more</a></span>
+                <span><a href="${pageContext.request.contextPath}/Market/Index?#badminton">more</a></span>
             </div>
         </div>
+
         <div class="course">
-            <a href="../market/index.jsp"><img src="../../../img/d2.jpg"></a>
+            <a href="${pageContext.request.contextPath}/Market/Index?#outdoor-sport"><img
+                    src="${pageContext.request.contextPath}/img/d2.jpg"></a>
             <h3>户外运动<span>outdoor sport</span></h3>
             <span class="red"></span>
             <div>
-                <span><a href="../market/index.jsp">more</a></span>
+                <span><a href="${pageContext.request.contextPath}/Market/Index?#outdoor-sport">more</a></span>
             </div>
         </div>
+
     </div>
 
     <h2>体能训练<span class="item-english">Physical training</span></h2>
+
     <div id="article" class="middle">
-        <a href=""><img src="../../../img/b-article.jpg"></a>
-        <img src="../../../img/article.jpg">
+        <a href="${pageContext.request.contextPath}/Training/Index?#article"><img
+                src="${pageContext.request.contextPath}/img/b-article.jpg"></a>
+        <img src="${pageContext.request.contextPath}/img/article.jpg">
     </div>
+
     <div id="video" class="middle">
-        <img src="../../../img/video.jpg">
-        <a href=""><img src="../../../img/b-video.jpg"></a>
+        <img src="${pageContext.request.contextPath}/img/video.jpg">
+        <a href="${pageContext.request.contextPath}/Training/Index?#video"><img
+                src="${pageContext.request.contextPath}/img/b-video.jpg"></a>
     </div>
+
 </div>
 
-<div id="bottom" style="background: url('../../../img/bottom.jpg')"></div>
+<div id="bottom" style="background: url('${pageContext.request.contextPath}/img/bottom.jpg')"></div>
 <div id="map">
     <div style="width: 100%; height: 600px;" id="allmap"></div>
 </div>
 <jsp:include page="../../common/footer.jsp"/>
-<script type="text/javascript" src="../../../js/map.js"></script>
-<script type="text/javascript" src="../../../js/slider.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/map.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/slider.js"></script>
 </body>
 </html>

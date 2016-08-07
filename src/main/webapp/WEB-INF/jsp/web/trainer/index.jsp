@@ -18,7 +18,12 @@
             <li><a href="${pageContext.request.contextPath}/HomePage/Index">首页</a></li>
             <li><a href="${pageContext.request.contextPath}/Academy/Index">学院介绍</a></li>
             <li class="active"><a href="${pageContext.request.contextPath}/Trainer/Index">师资力量</a></li>
-            <li><a href="${pageContext.request.contextPath}/Training/Index">体能训练</a></li>
+            <li><a href="${pageContext.request.contextPath}/Training/Index">体能训练</a>
+                <ul>
+                    <li><a href="#article">相关文章</a></li>
+                    <li><a href="#video">相关视频</a></li>
+                </ul>
+            </li>
             <li><a href="${pageContext.request.contextPath}/Experience/Index">预约体验</a></li>
             <li><a href="${pageContext.request.contextPath}/Market/Index">运动商城</a></li>
             <li><a href="${pageContext.request.contextPath}/MemberCenter/Index">会员中心</a></li>
@@ -27,10 +32,10 @@
     </nav>
 </header>
 <!--close-top-Header-menu-->
-<div class="top" style="background: url('../../../img/teacher/bg.jpg');">
+<div class="top" style="background: url('${pageContext.request.contextPath}/img/teacher/bg.jpg');">
     <!--<h2 class="t-title">导师介绍</h2> -->
     <br>
-    <div class="middle title"><img src="../../../img/teacher/t.jpg"></div>
+    <div class="middle title"><img src="${pageContext.request.contextPath}/img/teacher/t.jpg"></div>
     <div>
         <div class="t-name">
             <span class="nleft"><span class="name">叶君键<span class="pinyin">YE JUNJIAN</span></span></span>
@@ -56,18 +61,18 @@
                 <li>运动经历及教练生涯18年</li>
             </ul>
             <div class="middle tmiddle">
-                <img src="../../../img/teacher/01.png">
-                <img src="../../../img/teacher/02.png">
+                <img src="${pageContext.request.contextPath}/img/teacher/01.png">
+                <img src="${pageContext.request.contextPath}/img/teacher/02.png">
             </div>
         </div>
     </div>
     <div class="line"></div>
 </div>
-<div class="bottom" style="background: url('../../../img/teacher/bg02.jpg');">
+<div class="bottom" style="background: url('${pageContext.request.contextPath}/img/teacher/bg02.jpg');">
 
     <br>
-    <div class="middle title ttile"><img src="../../../img/teacher/tr.jpg"></div>
-    <img id="teachers" src="../../../img/teacher/total.png">
+    <div class="middle title ttile"><img src="${pageContext.request.contextPath}/img/teacher/tr.jpg"></div>
+    <img id="teachers" src="${pageContext.request.contextPath}/img/teacher/total.png">
     <!-- <h2 class="t-title">教练团队</h2>
     <div class="middle title"><img src="img/teacher/tr.jpg"></div>
     <div class="row">
