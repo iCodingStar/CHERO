@@ -29,7 +29,7 @@ import java.util.Date;
  * @date 2016/7/23 9:47
  * @since 1.0.0
  */
-@Data
+
 public class MemberDTO {
 
     protected Integer id;
@@ -78,5 +78,117 @@ public class MemberDTO {
         this.memberAddress = member.getMemberAddress();
         this.memberNote = member.getMemberNote();
         this.memberEmail = member.getMemberEmail();
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getMemberNickname() {
+        return memberNickname;
+    }
+
+    public void setMemberNickname(String memberNickname) {
+        this.memberNickname = memberNickname;
+    }
+
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
+
+    public String getMemberImage() {
+        return memberImage;
+    }
+
+    public void setMemberImage(String memberImage) {
+        this.memberImage = memberImage;
+    }
+
+    public String getMemberSex() {
+        return memberSex;
+    }
+
+    public void setMemberSex(String memberSex) {
+        this.memberSex = memberSex;
+    }
+
+    public Date getMemberBirthday() {
+        return memberBirthday;
+    }
+
+    public void setMemberBirthday(Date memberBirthday) {
+        this.memberBirthday = memberBirthday;
+    }
+
+    public String getMemberHobby() {
+        return memberHobby;
+    }
+
+    public void setMemberHobby(String memberHobby) {
+        this.memberHobby = memberHobby;
+    }
+
+    public String getMemberTelephone() {
+        return memberTelephone;
+    }
+
+    public void setMemberTelephone(String memberTelephone) {
+        this.memberTelephone = memberTelephone;
+    }
+
+    public String getMemberHomePhone() {
+        return memberHomePhone;
+    }
+
+    public void setMemberHomePhone(String memberHomePhone) {
+        this.memberHomePhone = memberHomePhone;
+    }
+
+    public String getMemberQq() {
+        return memberQq;
+    }
+
+    public void setMemberQq(String memberQq) {
+        this.memberQq = memberQq;
+    }
+
+    public String getMemberWeixin() {
+        return memberWeixin;
+    }
+
+    public void setMemberWeixin(String memberWeixin) {
+        this.memberWeixin = memberWeixin;
+    }
+
+    public String getMemberAddress() {
+        return memberAddress;
+    }
+
+    public void setMemberAddress(String memberAddress) {
+        this.memberAddress = memberAddress;
+    }
+
+    public String getMemberNote() {
+        return memberNote;
+    }
+
+    public void setMemberNote(String memberNote) {
+        this.memberNote = memberNote;
+    }
+
+    public String getMemberEmail() {
+        return memberEmail;
+    }
+
+    public void setMemberEmail(String memberEmail) {
+        this.memberEmail = memberEmail;
     }
 }

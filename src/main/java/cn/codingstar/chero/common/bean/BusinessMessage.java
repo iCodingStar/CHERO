@@ -26,8 +26,24 @@ import lombok.Data;
  * @date 2016/7/26 8:41
  * @since 1.0.0
  */
-@Data
+
 public class BusinessMessage {
     private Integer code = 200;
     private String message = "请求成功";
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

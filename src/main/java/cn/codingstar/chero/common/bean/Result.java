@@ -27,7 +27,7 @@ import lombok.Data;
  * @date 2016/7/26 8:23
  * @since 1.0.0
  */
-@Data
+
 public class Result<T> {
 
     private MessageType message;
@@ -53,5 +53,21 @@ public class Result<T> {
 
     public boolean success() {
         return (this.message.getCode() > 10000 && this.message.getCode() % 2 == 1);
+    }
+
+    public MessageType getMessage() {
+        return message;
+    }
+
+    public void setMessage(MessageType message) {
+        this.message = message;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 }
