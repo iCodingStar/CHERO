@@ -48,7 +48,8 @@
             <div class="sex">
                 <label for="sex">性别：</label>
                 <select class="" id="sex" name="">
-                    <option value="option">请选择</option>
+                    <option value="option">男</option>
+                    <option value="option">女</option>
                 </select>
             </div>
 

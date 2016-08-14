@@ -20,8 +20,8 @@
             <li class="active"><a href="${pageContext.request.contextPath}/Trainer/Index">师资力量</a></li>
             <li><a href="${pageContext.request.contextPath}/Training/Index">体能训练</a>
                 <ul>
-                    <li><a href="#article">相关文章</a></li>
-                    <li><a href="#video">相关视频</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Training/Index?#article">相关文章</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Training/Index?#video">相关视频</a></li>
                 </ul>
             </li>
             <li><a href="${pageContext.request.contextPath}/Experience/Index">预约体验</a></li>

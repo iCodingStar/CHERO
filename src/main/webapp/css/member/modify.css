@@ -72,11 +72,12 @@ input{
 
 
 input[type=submit]{
+    margin-left: 85px;
     padding: 7px 8px;
     background-color: #E13641;
     border-radius: 6px;
     border: 0px;
     color: #ffffff;
-    width: 160px;
+    width: 305px;
     text-align: center;
 }

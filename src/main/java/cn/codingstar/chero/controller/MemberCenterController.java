@@ -306,6 +306,17 @@ public class MemberCenterController extends AbstractWebController {
         }
     }
 
+    /**
+     * 注销
+     */
+    @RequestMapping(value = {"/Logout"}, method = RequestMethod.GET)
+    public ModelAndView logout() {
+        ModelAndView mav = new ModelAndView();
+        logoutSuccess();
+        mav.setViewName("member/login");
+        return mav;
+    }
+
     /***
      * 用户前往注册
      *
@@ -348,5 +359,52 @@ public class MemberCenterController extends AbstractWebController {
     @CheckLogin
     public String registerSuccess() {
         return "/member/register-success";
+    }
+
+    /**
+     * 找回密码
+     */
+    @RequestMapping(value = {"/Find/Password"}, method = {})
+    public String findPassword() {
+        return "member/account-find-password";
+    }
+
+    @RequestMapping(value = {"/Verify/Email"}, method = {RequestMethod.GET})
+    public
+    @ResponseBody
+    Boolean verifyEmail(String email) {
+        boolean result = true;
+        //1.验证邮箱是否存在
+
+        //2.发送验证码
+        return result;
+    }
+
+    @RequestMapping(value = {"/Verify/SecCode"}, method = {RequestMethod.GET})
+    public ModelAndView verifySecCode(String secCode) {
+        //1.验证验证码是否正确
+        ModelAndView mav = new ModelAndView();
+        boolean result = true;
+        if (result) {
+            mav.setViewName("member/account-reset-password");
+        } else {
+            mav.addObject("verifyCodeError", "验证码不正确");
+            mav.setViewName("member/account-find-password");
+        }
+        return mav;
+    }
+
+    @RequestMapping(value = {"/Reset/Success"}, method = {RequestMethod.GET})
+    public ModelAndView resetSuccess(String secCode) {
+        //1.验证验证码是否正确
+        ModelAndView mav = new ModelAndView();
+        boolean result = true;
+        if (result) {
+            mav.setViewName("member/account-reset-success");
+        } else {
+            mav.addObject("verifyCodeError", "验证码不正确");
+            mav.setViewName("member/account-reset-password");
+        }
+        return mav;
     }
 }

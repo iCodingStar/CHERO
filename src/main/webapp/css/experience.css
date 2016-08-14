@@ -47,7 +47,8 @@ div, span, a, input {
 }
 
 .main .content form .time input,
-.main .content form .birthday input{
+.main .content form .birthday input,
+.main .content form input{
     width: 203px;
     height: 29px;
 }

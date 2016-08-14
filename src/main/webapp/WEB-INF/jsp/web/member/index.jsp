@@ -57,6 +57,10 @@
                     <div class="clear"></div>
                 </div>
 
+                <div class="logout">
+                    <span><a href="${pageContext.request.contextPath}/MemberCenter/Logout">注销</a></span>
+                </div>
+
                 <div class="clear"></div>
 
             </div>

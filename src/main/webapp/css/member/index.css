@@ -265,4 +265,18 @@ span {
     text-align: center;
     color: #e30006;
 }
+
+.container .main .info .logout{
+    margin: 15px 0px;
+    display: inline-block;
+    width: 48px;
+}
+
+.container .main .info .logout span a{
+    color: #F0F0F0;
+    font-family: "微软雅黑 Light";
+    font-size: 18px;
+    padding: 2px;
+    border-radius: 3px;
+}
 /*orders display area*/
