@@ -74,6 +74,14 @@ public interface MemberService {
     boolean checkMemberName(String memberName);
 
     /***
+     * 检查邮箱是否存在
+     *
+     * @param memberEmail
+     * @return
+     */
+    boolean checkMemberEmail(String memberEmail);
+
+    /***
      * 检查token
      *
      * @param token

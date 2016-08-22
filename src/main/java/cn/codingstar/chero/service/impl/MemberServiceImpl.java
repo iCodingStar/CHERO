@@ -188,6 +188,18 @@ public class MemberServiceImpl implements MemberService {
         return ObjectUtils.isEmpty(memberCustomMapper.selectByMemberName(memberName));
     }
 
+    @Override
+    public boolean checkMemberEmail(String memberEmail) {
+        Member originMember = new Member();
+        originMember.setMemberEmail(memberEmail);
+        Member member = memberCustomMapper.selectByMember(originMember);
+        if (!ObjectUtils.isEmpty(member)){
+            return true;//邮箱存在
+        }else {
+            return false;//邮箱不存在
+        }
+    }
+
     /***
      * 检查token是否存在
      *
@@ -219,8 +231,6 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public MemberDTO getLoginMember(String memberName) {
-        ValidationUtils.required(memberName);
-        ValidationUtils.text(memberName);
         Member member = memberMapper.selectByMemberName(memberName);
         if (member == null) {
             return null;

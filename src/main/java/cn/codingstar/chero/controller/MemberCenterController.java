@@ -372,10 +372,10 @@ public class MemberCenterController extends AbstractWebController {
     @RequestMapping(value = {"/Verify/Email"}, method = {RequestMethod.GET})
     public
     @ResponseBody
-    Boolean verifyEmail(String email) {
+    Boolean verifyEmail(String memberEmail) {
         boolean result = true;
         //1.验证邮箱是否存在
-
+        boolean isExistEmail = memberService.checkMemberEmail(memberEmail);
         //2.发送验证码
         return result;
     }
