@@ -13,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.codingstar.chero.component;
+package cn.codingstar.chero.service.impl;
 
 import cn.codingstar.chero.common.utils.NumberUtils;
+import cn.codingstar.chero.service.DataGenerateService;
 import cn.codingstar.chero.service.UniqueKeyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * <p>Class: </p>
@@ -33,8 +32,8 @@ import java.util.Date;
  * @date 2016/7/30 18:01
  * @since 1.0.0
  */
-@Component
-public class DataGenerator {
+@Service
+public class DataGenerateServiceImpl implements DataGenerateService {
 
     @Autowired
     private UniqueKeyService uniqueKeyService;

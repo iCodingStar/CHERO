@@ -16,15 +16,11 @@
 package cn.codingstar.chero.service.impl;
 
 import cn.codingstar.chero.common.bean.ExceptionType;
-import cn.codingstar.chero.common.bean.MessageType;
-import cn.codingstar.chero.common.bean.Result;
 import cn.codingstar.chero.common.exception.BusinessException;
 import cn.codingstar.chero.common.utils.ObjectUtils;
 import cn.codingstar.chero.common.utils.ValidationUtils;
-import cn.codingstar.chero.component.DataGenerator;
 import cn.codingstar.chero.mapper.MemberMapper;
 import cn.codingstar.chero.mapper.custom.MemberCustomMapper;
-import cn.codingstar.chero.model.dto.MemberDO;
 import cn.codingstar.chero.model.dto.MemberDTO;
 import cn.codingstar.chero.model.persistence.Member;
 import cn.codingstar.chero.service.MemberService;
@@ -50,7 +46,7 @@ public class MemberServiceImpl implements MemberService {
     private MemberCustomMapper memberCustomMapper;
 
     @Autowired
-    private DataGenerator dataGenerator;
+    private DataGenerateServiceImpl dataGenerator;
 
     /***
      * 会员注册
