@@ -46,7 +46,7 @@ public class MemberServiceImpl implements MemberService {
     private MemberCustomMapper memberCustomMapper;
 
     @Autowired
-    private DataGenerateServiceImpl dataGenerator;
+    private DataGenerateServiceImpl dataGenerateService;
 
     /***
      * 会员注册
@@ -83,7 +83,7 @@ public class MemberServiceImpl implements MemberService {
         }
 
         //设置memberId
-        String memberId = dataGenerator.generateMemberId();
+        String memberId = dataGenerateService.generateMemberId();
         originMember.setMemberId(memberId);
 
         //加密密码
@@ -189,9 +189,9 @@ public class MemberServiceImpl implements MemberService {
         Member originMember = new Member();
         originMember.setMemberEmail(memberEmail);
         Member member = memberCustomMapper.selectByMember(originMember);
-        if (!ObjectUtils.isEmpty(member)){
+        if (!ObjectUtils.isEmpty(member)) {
             return true;//邮箱存在
-        }else {
+        } else {
             return false;//邮箱不存在
         }
     }
